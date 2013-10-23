@@ -13,7 +13,6 @@ import android.provider.MediaStore;
 import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
-import android.view.Menu;
 import android.widget.Toast;
 
 public class Main extends Activity {
@@ -66,14 +65,19 @@ public class Main extends Activity {
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
 	}
+	@Override
+	protected void onRestart(){
+		super.onRestart();
+		Toast.makeText(this, "Image saved to:\n" + fileUri.getPath(), Toast.LENGTH_LONG).show();
+	}
 	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 	    if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
 	        if (resultCode == RESULT_OK) {
 	            //Image captured and saved to fileUri specified in the Intent
-	            Toast.makeText(this, "Image saved to:\n" + fileUri.getPath(), Toast.LENGTH_LONG).show();
-	            this.finishActivity(CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+	            //Toast.makeText(this, "Image saved to:\n" + fileUri.getPath(), Toast.LENGTH_LONG).show();
+	            this.finish();
 	        } else if (resultCode == RESULT_CANCELED) {
 	            // User cancelled the image capture
 	        } else {
