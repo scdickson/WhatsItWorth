@@ -4,5 +4,6 @@
     <string name="app_name">What\'s It Worth?</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="uploadMessage">Uploading Image to Server&#8230;</string>
 
 </resources>

@@ -68,7 +68,7 @@ public class Main extends Activity {
 	@Override
 	protected void onRestart(){
 		super.onRestart();
-		Toast.makeText(this, "Image saved to:\n" + fileUri.getPath(), Toast.LENGTH_LONG).show();
+		//Toast.makeText(this, "Image saved to:\n" + fileUri.getPath(), Toast.LENGTH_LONG).show();
 	}
 	
 	@Override
@@ -76,8 +76,8 @@ public class Main extends Activity {
 	    if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
 	        if (resultCode == RESULT_OK) {
 	            //Image captured and saved to fileUri specified in the Intent
-	            //Toast.makeText(this, "Image saved to:\n" + fileUri.getPath(), Toast.LENGTH_LONG).show();
-	            this.finish();
+	            Toast.makeText(this, "Image saved to:\n" + fileUri.getPath(), Toast.LENGTH_LONG).show();
+	            //this.finish();
 	        } else if (resultCode == RESULT_CANCELED) {
 	            // User cancelled the image capture
 	        } else {
