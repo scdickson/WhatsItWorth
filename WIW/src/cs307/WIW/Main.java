@@ -50,6 +50,7 @@ public class Main extends Activity {
 
 		setContentView(R.layout.activity_main);
 		
+		/*
 		// create Intent to take a picture and return control to the calling application
 	    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
@@ -58,7 +59,7 @@ public class Main extends Activity {
 
 	    // start the image capture Intent
 	    startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
-
+		*/
 	}
 
 	@Override
