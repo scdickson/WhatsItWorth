@@ -94,7 +94,6 @@ public class WIWServer
 	private synchronized void removeThread(WIWServerThread thread)
 	{
 		clientThreads.remove(thread);
-		startListening();
 
 	}
 	
@@ -105,6 +104,7 @@ public class WIWServer
 		Socket s;
 		InputStream in;
 		OutputStream out;
+		WIWServerThreadPing pingThread;
 
 		public WIWServerThread(Socket s)
 		{
@@ -135,29 +135,36 @@ public class WIWServer
 
 			if(WIWConstants.DO_PING)
 			{
-				new WIWServerThreadPing(this).start();
+				pingThread = new WIWServerThreadPing(this);
+				pingThread.start();
 			}
+
+			start();
 		}
 
-		public void finish()
+		public synchronized void finish()
 		{
-			try
+			if(!s.isClosed())
 			{
-				join();
-				in.close();
-				out.close();
-				s.close();
-				removeThread(this);
-
-				if(WIWConstants.VERBOSE_MODE)
+				try
 				{
-					System.err.println(getDateTime() + "Server Thread handling " + s.getInetAddress() + " has completed.");
+					in.close();
+					out.close();
+					s.close();
+					removeThread(this);
+
+					if(WIWConstants.VERBOSE_MODE)
+					{
+						System.err.println(getDateTime() + "Server Thread handling " + s.getInetAddress() + " has completed.");
+					}
+				
+				}
+				catch(Exception e)
+				{
+					System.err.println(getDateTime() + "Error stopping Server Thread...");
 				}
 			}
-			catch(Exception e)
-			{
-				System.err.println(getDateTime() + "Error stopping Server Thread...");
-			}
+
 		}
 
 		public synchronized InputStream getInputStream()
@@ -173,6 +180,19 @@ public class WIWServer
 		public void run()
 		{
 			//TODO...handle card request
+			String cards[] = {"Pack Rat", "Chronomaton", "Druid's Familiar", "Frost Titan", "Vent Sentinel", "Path to Exile", "Azorius Charm", "AEtherling", "Spear of Heliod", "Angel of Serenity"};
+			Random generator = new Random(System.currentTimeMillis());
+			try
+			{
+				PrintWriter writer = new PrintWriter(out);
+				writer.println(cards[generator.nextInt(cards.length)]);
+				writer.flush();
+				pingThread.finish();
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
 		}
 
 		private class WIWServerThreadPing extends Thread
@@ -180,6 +200,7 @@ public class WIWServer
 			WIWServerThread thread;
 			InputStream in;
 			Socket s;
+			boolean pinging = true;
 
 			public WIWServerThreadPing(WIWServerThread thread)
 			{
@@ -188,9 +209,23 @@ public class WIWServer
 				s = thread.getSocket();
 			}
 
+			public synchronized void finish()
+			{
+				try
+				{
+					pinging = false;
+					interrupt();
+					thread.finish();
+				}
+				catch(Exception e)
+				{
+					System.err.println("Error stopping ping thread...");
+				}
+			}
+
 			public void run()
 			{
-				while(true)
+				while(pinging)
 				{
 					try
 					{
@@ -206,21 +241,24 @@ public class WIWServer
 
 						sleep(WIWConstants.PING_TIMEOUT * 1000);
 					}
+					catch(SocketException se)
+					{
+						//Perfectly Normal. Means WIWServerThread has finished.
+					}
 					catch(Exception e)
 					{
 						System.err.println(getDateTime() + "Error pinging client...");
+						e.printStackTrace();
 					}
 				}
 
 				try
 				{
-					thread.finish();
-					join();
+					finish();
 				}
 				catch(Exception e)
 				{
 					System.err.println(getDateTime() + "Error stopping Server Ping Thread...");
-					e.printStackTrace();
 				}
 			}
 		}
