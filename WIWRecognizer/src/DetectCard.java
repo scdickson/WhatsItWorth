@@ -1,8 +1,5 @@
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Vector;
 
 import org.opencv.calib3d.Calib3d;
 import org.opencv.core.Core;
@@ -12,17 +9,15 @@ import org.opencv.core.MatOfDMatch;
 import org.opencv.core.MatOfKeyPoint;
 import org.opencv.core.MatOfPoint2f;
 import org.opencv.core.Point;
-import org.opencv.core.Scalar;
 import org.opencv.features2d.DMatch;
 import org.opencv.features2d.DescriptorExtractor;
 import org.opencv.features2d.DescriptorMatcher;
 import org.opencv.features2d.FeatureDetector;
-import org.opencv.features2d.Features2d;
 import org.opencv.features2d.KeyPoint;
 import org.opencv.highgui.Highgui;
 import org.opencv.imgproc.Imgproc;
 
-class DetectCard {
+public class DetectCard {
 	FeatureDetector mFeatureDetector;
 	DescriptorExtractor mDescriptorExtractor;
 	DescriptorMatcher mDescriptorMatcher;
@@ -31,6 +26,11 @@ class DetectCard {
 	Mat mSceneDescriptors;
 	MatOfKeyPoint mSourceKeyPoints;
 	MatOfKeyPoint mSceneKeyPoints;
+
+	public DetectCard() {
+		// Load the native library.
+		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+	}
 
 	public boolean run(String sourceName, String sceneName) {
 		long start = System.currentTimeMillis();
@@ -195,12 +195,8 @@ class DetectCard {
 		// Highgui.imwrite("Box.png", sceneRGB);
 		// Highgui.imwrite("Matches.png", out);
 	}
-}
 
-public class Main {
 	public static void main(String[] args) {
-		// Load the native library.
-		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 		new DetectCard().run("data/faeriesource.jpg", "data/faeriescene2.jpg");
 	}
 }
