@@ -18,6 +18,9 @@ import org.opencv.highgui.Highgui;
 import org.opencv.imgproc.Imgproc;
 
 public class DetectCard {
+	static {
+		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+	};
 	FeatureDetector mFeatureDetector;
 	DescriptorExtractor mDescriptorExtractor;
 	DescriptorMatcher mDescriptorMatcher;
@@ -26,11 +29,6 @@ public class DetectCard {
 	Mat mSceneDescriptors;
 	MatOfKeyPoint mSourceKeyPoints;
 	MatOfKeyPoint mSceneKeyPoints;
-
-	public DetectCard() {
-		// Load the native library.
-		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-	}
 
 	public boolean run(String sourceName, String sceneName) {
 		long start = System.currentTimeMillis();
