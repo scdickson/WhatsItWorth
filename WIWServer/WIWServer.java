@@ -7,6 +7,11 @@ import java.io.*;
 import java.util.*;
 import java.text.*;
 
+//Temporary imports?
+import java.awt.image.*;
+import javax.imageio.*;
+
+
 public class WIWServer
 {
 	private ArrayList<WIWServerThread> clientThreads;
@@ -179,15 +184,41 @@ public class WIWServer
 
 		public void run()
 		{
-			//TODO...handle card request
-			String cards[] = {"Pack Rat", "Chronomaton", "Druid's Familiar", "Frost Titan", "Vent Sentinel", "Path to Exile", "Azorius Charm", "AEtherling", "Spear of Heliod", "Angel of Serenity"};
+			try
+			{
+				DataInputStream dis = new DataInputStream(in);
+				int length = dis.readInt();
+				System.err.println("\t--Getting " + length + " bytes from client...");
+				byte file[] = new byte[length];
+				dis.readFully(file);
+				System.err.println("\t--" + length + " bytes successfully received!");
+				InputStream is = new ByteArrayInputStream(file);
+				BufferedImage bi = ImageIO.read(is);
+				ImageIO.write(bi, "jpg", new File(System.currentTimeMillis() + ".jpg"));
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+			String cards[] = {"Pack Rat", "Chronomaton", "Druid's Familiar", "Vent Sentinel", "Azorius Charm", "AEtherling", "Spear of Heliod", "Angel of Serenity"};
 			Random generator = new Random(System.currentTimeMillis());
 			try
 			{
 				PrintWriter writer = new PrintWriter(out);
-				writer.println(cards[generator.nextInt(cards.length)]);
+				String card = cards[generator.nextInt(cards.length)];
+				writer.println(card);
 				writer.flush();
-				pingThread.finish();
+				System.err.println("\t--Sending back " + card);
+				finish();
+
+				if(WIWConstants.DO_PING)
+				{
+					pingThread.finish();
+				}
+				else
+				{
+					finish();
+				}
 			}
 			catch(Exception e)
 			{

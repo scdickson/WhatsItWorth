@@ -20,9 +20,11 @@ public class TCGScraper
   public static void main(String args[])
   {
     TCGScraper weboshi = new TCGScraper();
-    System.out.println("Low: " + weboshi.getLowPrice("ANGEL OF SERENITY"));
-    System.out.println("Med: " + weboshi.getMedPrice("angel of serenity"));
-    System.out.println("High: " + weboshi.getHighPrice("AnGeL oF sErEnItY"));
+
+    for(String s : args)
+    {
+    	System.out.println(s + " low price: " + weboshi.getLowPrice(s));
+    }
   }
   
   
