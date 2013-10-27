@@ -20,6 +20,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="cs307.wiw.Main"
+            android:theme="@android:style/Theme.NoTitleBar"
             android:label="@string/app_name" 
             android:screenOrientation="portrait">
             <intent-filter>

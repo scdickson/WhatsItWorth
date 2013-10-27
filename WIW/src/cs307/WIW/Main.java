@@ -1,7 +1,7 @@
 package cs307.wiw;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.net.InetAddress;
@@ -30,11 +30,22 @@ public class Main extends Activity {
 	private static String fileLocation = "";
 	ProgressBar progressBar;
 	TextView progressText;
+	TextView cardNameText;
+	TextView cardPriceLowText;
+	TextView cardPriceMedText;
+	TextView cardPriceHighText;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 	    setContentView(R.layout.activity_main);
+	    progressBar = (ProgressBar) findViewById(R.id.progressBar);
+	    progressText = (TextView) findViewById(R.id.progressTextView);
+	    cardNameText = (TextView) findViewById(R.id.cardNameTextView);
+	    cardPriceLowText = (TextView) findViewById(R.id.cardPriceLowTextView);
+	    cardPriceMedText = (TextView) findViewById(R.id.cardPriceMedTextView);
+	    cardPriceHighText = (TextView) findViewById(R.id.cardPriceHighTextView);
 	    
 	    if(savedInstanceState==null){
 		    // create Intent to take a picture and return control to the calling application
@@ -96,81 +107,82 @@ public class Main extends Activity {
 	    return mediaFile;
 	}
 	
-	private class ImageNetworkTask extends AsyncTask<String, Integer, String> {
+	private class ImageNetworkTask extends AsyncTask<String, Integer, String[]> {
 
-		private InetAddress serverAddr;
-		private Socket ioSocket;
-		private int ioPort = 9999;
+		private int ioPort = 9998;
+		private String serverName = "data.cs.purdue.edu";
 		
 		@Override
 		protected void onPreExecute(){
-			progressBar = (ProgressBar) findViewById(R.id.progressBar1);
-		    progressText = (TextView) findViewById(R.id.textView1);
 			progressBar.setVisibility(View.VISIBLE);
-			progressBar.setIndeterminate(false);
-			progressBar.setProgress(0);
 			progressText.setVisibility(View.VISIBLE);
 						
 		}
 		
 		@Override
-		protected String doInBackground(String... fileLocationPath) {
+		protected String[] doInBackground(String... fileLocationPath) {
 			File imageFile = new File(fileLocationPath[0]);
 			long imageFileSize = imageFile.length();
-			BufferedInputStream imageBufferedInputStream = null;
-			BufferedOutputStream socketBufferedOutputStream = null;
-			BufferedInputStream socketBufferedInputStream = null;
 			String cardName = "";
+			String[] results = new String[4];
 			
 			try{
 				//Setup connection
-				serverAddr = InetAddress.getByName("data.cs.purdue.edu");
-				ioSocket = new Socket(serverAddr, ioPort);
+				InetAddress serverAddr = InetAddress.getByName(serverName);
+				Socket ioSocket = new Socket(serverAddr, ioPort);
 				
-				//Send image to server
-				imageBufferedInputStream = new BufferedInputStream(new FileInputStream(imageFile.getPath()));
-				socketBufferedOutputStream = new BufferedOutputStream(ioSocket.getOutputStream());
-				byte imageUploadBuffer[] = new byte[8192];
-				int bytesRead;
-				int totalRead = 0;
-				while((bytesRead = imageBufferedInputStream.read(imageUploadBuffer, 0, 8192)) != -1){
-					socketBufferedOutputStream.write(imageUploadBuffer, 0, bytesRead);
-					totalRead+=bytesRead;
-					publishProgress(0,(int) Math.floor((totalRead/imageFileSize)*100));
-				}
-				if(imageBufferedInputStream != null){
-					imageBufferedInputStream.close();
-				}
-				if(socketBufferedOutputStream != null){
-					socketBufferedOutputStream.close();
-				}
-				//Image sent
-				publishProgress(1,0);
+				//Setup i/o
+				FileInputStream fisFile = new FileInputStream(imageFile);
+				DataOutputStream dosImage = new DataOutputStream(ioSocket.getOutputStream());
+				DataInputStream disCard = new DataInputStream(ioSocket.getInputStream());
 				
-				//Get card name from server
-				socketBufferedInputStream = new BufferedInputStream(ioSocket.getInputStream());
-				byte cardNameBuffer[] = new byte[8192];
-				socketBufferedInputStream.read(cardNameBuffer, 0, 8192);
+				//Setup buffers
+				byte[] imageBuffer = new byte[(int)imageFileSize];
+				byte[] cardNameBuffer = new byte[25];
+				
+				//Read from file
+				fisFile.read(imageBuffer, 0, (int)imageFileSize);
+				
+				//Send file to server
+				dosImage.writeInt((int)imageFileSize);
+				dosImage.write(imageBuffer, 0, (int)imageFileSize);
+				
+				//Publish sent
+				publishProgress(0);
+				
+				//Receive card name from server
+				disCard.read(cardNameBuffer);
 				cardName = new String(cardNameBuffer,"UTF-8");
-				if(socketBufferedInputStream != null){
-					socketBufferedInputStream.close();
-				}
+				cardName = cardName.substring(0, cardName.indexOf("\n"));
 				
+				//close readers/writers
+				dosImage.close();
+				fisFile.close();
+				disCard.close();
+
 				//Close socket
 				ioSocket.close();
 			}catch(Exception e){
 				Log.e("ImageNetworkTask", "Upload Issue", e);
 			}
 			
-			return cardName;
+			results[0] = cardName;
+			
+			publishProgress(1);
+			
+			TCGScraper scrape = new TCGScraper();
+			results[1] = "L: " + scrape.getLowPrice(cardName);
+			results[2] = "M: " + scrape.getMedPrice(cardName);
+			results[3] = "H: " + scrape.getHighPrice(cardName);
+			return results;
 		}
 		
 		@Override
 		protected void onProgressUpdate(Integer... progress){
 			if(progress[0] == 0){
-				progressBar.setProgress(progress[1]);
-			}else{
 				progressText.setText("Analyzing Image on Server");
+			}else if(progress[0]==1){
+				progressText.setText("Acquiring Current Pricing Information");
 			}
 		}
 		
@@ -180,8 +192,18 @@ public class Main extends Activity {
 		}
 		
 		@Override
-		protected void onPostExecute(String result){
-			progressText.setText(result);
+		protected void onPostExecute(String[] results){
+			cardNameText.setText(results[0]);
+			cardPriceLowText.setText(results[1]);
+			cardPriceMedText.setText(results[2]);
+			cardPriceHighText.setText(results[3]);
+			
+			progressText.setVisibility(View.INVISIBLE);
+			progressBar.setVisibility(View.INVISIBLE);
+			cardNameText.setVisibility(View.VISIBLE);
+			cardPriceLowText.setVisibility(View.VISIBLE);
+			cardPriceMedText.setVisibility(View.VISIBLE);
+			cardPriceHighText.setVisibility(View.VISIBLE);
 		}
 
 	}
