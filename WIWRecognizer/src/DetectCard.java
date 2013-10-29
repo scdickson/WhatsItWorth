@@ -1,5 +1,3 @@
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -11,17 +9,18 @@ import org.opencv.core.MatOfDMatch;
 import org.opencv.core.MatOfKeyPoint;
 import org.opencv.core.MatOfPoint2f;
 import org.opencv.core.Point;
-import org.opencv.core.Scalar;
 import org.opencv.features2d.DMatch;
 import org.opencv.features2d.DescriptorExtractor;
 import org.opencv.features2d.DescriptorMatcher;
 import org.opencv.features2d.FeatureDetector;
-import org.opencv.features2d.Features2d;
 import org.opencv.features2d.KeyPoint;
 import org.opencv.highgui.Highgui;
 import org.opencv.imgproc.Imgproc;
 
-class DetectCard {
+public class DetectCard {
+	static {
+		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+	};
 	FeatureDetector mFeatureDetector;
 	DescriptorExtractor mDescriptorExtractor;
 	DescriptorMatcher mDescriptorMatcher;
@@ -31,18 +30,12 @@ class DetectCard {
 	MatOfKeyPoint mSourceKeyPoints;
 	MatOfKeyPoint mSceneKeyPoints;
 
-	public void run() {
+	public boolean run(String sourceName, String sceneName) {
 		long start = System.currentTimeMillis();
 		System.out.println("\nRunning Card Detection");
 
-		Mat sourceRGB = Highgui.imread("data/faeriesource.jpg");
-		Mat sceneRGB = Highgui.imread("data/faeriescene2.jpg");
-
-		// Mat sourceRGB = Highgui.imread("data/mysticsource.jpg");
-		// Mat sceneRGB = Highgui.imread("data/mysticscene.jpg");
-
-		// Mat sourceRGB = Highgui.imread("data/demonicart.png");
-		// Mat sceneRGB = Highgui.imread("data/demonicscene.jpg");
+		Mat sourceRGB = Highgui.imread(sourceName);
+		Mat sceneRGB = Highgui.imread(sceneName);
 
 		Mat source = new Mat();
 		Mat scene = new Mat();
@@ -66,15 +59,14 @@ class DetectCard {
 		mDescriptorExtractor.compute(source, mSourceKeyPoints,
 				mSourceDescriptors);
 		mDescriptorExtractor.compute(scene, mSceneKeyPoints, mSceneDescriptors);
-		FileOutputStream fout;
-		try {
-			fout = new FileOutputStream("blobs.blob");
-			KeyWriter.write(mSourceKeyPoints, fout);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
 
-		Highgui.imwrite("Descriptors.png", mSourceDescriptors);
+		/*
+		 * FileOutputStream fout; try { fout = new
+		 * FileOutputStream("blobs.blob"); KeyWriter.write(mSourceKeyPoints,
+		 * fout); } catch (FileNotFoundException e) { e.printStackTrace(); }
+		 */
+
+		// Highgui.imwrite("Descriptors.png", mSourceDescriptors);
 
 		MatOfDMatch modm = new MatOfDMatch();
 		mDescriptorMatcher.match(mSourceDescriptors, mSceneDescriptors, modm);
@@ -133,29 +125,76 @@ class DetectCard {
 
 		Core.perspectiveTransform(obj_corners, scene_corners, H);
 
-		Mat out = new Mat();
+		double p0x = scene_corners.get(0, 0)[0];
+		double p0y = scene_corners.get(0, 0)[1];
 
-		Features2d.drawMatches(source, mSourceKeyPoints, scene,
-				mSceneKeyPoints, goodModm, out);
+		double p1x = scene_corners.get(1, 0)[0];
+		double p1y = scene_corners.get(1, 0)[1];
 
-		Core.line(sceneRGB, new Point(scene_corners.get(0, 0)), new Point(
-				scene_corners.get(1, 0)), new Scalar(0, 255, 0), 4);
-		Core.line(sceneRGB, new Point(scene_corners.get(1, 0)), new Point(
-				scene_corners.get(2, 0)), new Scalar(0, 255, 0), 4);
-		Core.line(sceneRGB, new Point(scene_corners.get(2, 0)), new Point(
-				scene_corners.get(3, 0)), new Scalar(0, 255, 0), 4);
-		Core.line(sceneRGB, new Point(scene_corners.get(3, 0)), new Point(
-				scene_corners.get(0, 0)), new Scalar(0, 255, 0), 4);
-		System.out.println("Computation Time: "+(System.currentTimeMillis() - start)+"ms");
-		Highgui.imwrite("Box.png", sceneRGB);
-		Highgui.imwrite("Matches.png", out);
+		double p2x = scene_corners.get(2, 0)[0];
+		double p2y = scene_corners.get(2, 0)[1];
+
+		double p3x = scene_corners.get(3, 0)[0];
+		double p3y = scene_corners.get(3, 0)[1];
+
+		double deltax = p0x - p1x;
+		double deltay = p0y - p1y;
+		// Bottom Line
+		double line0 = Math.sqrt(deltax * deltax + deltay * deltay);
+
+		deltax = p1x - p2x;
+		deltay = p1y - p2y;
+		// Left Line
+		double line1 = Math.sqrt(deltax * deltax + deltay * deltay);
+
+		deltax = p2x - p3x;
+		deltay = p2y - p3y;
+		// Top Line
+		double line2 = Math.sqrt(deltax * deltax + deltay * deltay);
+
+		deltax = p3x - p0x;
+		deltay = p3y - p0y;
+		// Right Line
+		double line3 = Math.sqrt(deltax * deltax + deltay * deltay);
+
+		double topleft = line2 / line1 - .701;
+		double bottomright = line0 / line3 - .701;
+
+		double finalerror = topleft + bottomright;
+
+		double errorthreshold = .1;
+
+		if (finalerror < errorthreshold) {
+			System.out.println("Match found!");
+		} else {
+			System.out.println("No match found");
+		}
+		System.out.println("Computation Time: "
+				+ (System.currentTimeMillis() - start) + "ms");
+
+		return finalerror < errorthreshold;
+		/*
+		 * Mat out = new Mat();
+		 * 
+		 * Features2d.drawMatches(source, mSourceKeyPoints, scene,
+		 * mSceneKeyPoints, goodModm, out);
+		 * 
+		 * Core.line(sceneRGB, new Point(scene_corners.get(0, 0)), new Point(
+		 * scene_corners.get(1, 0)), new Scalar(0, 255, 0), 4);
+		 * Core.line(sceneRGB, new Point(scene_corners.get(1, 0)), new Point(
+		 * scene_corners.get(2, 0)), new Scalar(0, 255, 0), 4);
+		 * Core.line(sceneRGB, new Point(scene_corners.get(2, 0)), new Point(
+		 * scene_corners.get(3, 0)), new Scalar(0, 255, 0), 4);
+		 * Core.line(sceneRGB, new Point(scene_corners.get(3, 0)), new Point(
+		 * scene_corners.get(0, 0)), new Scalar(0, 255, 0), 4);
+		 * System.out.println("Computation Time: " + (System.currentTimeMillis()
+		 * - start) + "ms");
+		 */
+		// Highgui.imwrite("Box.png", sceneRGB);
+		// Highgui.imwrite("Matches.png", out);
 	}
-}
 
-public class Main {
 	public static void main(String[] args) {
-		// Load the native library.
-		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-		new DetectCard().run();
+		new DetectCard().run("data/faeriesource.jpg", "data/faeriescene2.jpg");
 	}
 }
