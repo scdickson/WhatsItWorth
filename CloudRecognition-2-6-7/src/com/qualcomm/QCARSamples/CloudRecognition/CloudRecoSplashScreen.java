@@ -27,20 +27,10 @@ public class CloudRecoSplashScreen extends Activity
         super.onCreate(savedInstanceState);
 
         // Sets the Splash Screen Layout
-        setContentView(R.layout.splash_screen);
+        //setContentView(R.layout.splash_screen);
 
-        // Generates a Handler to launch the About Screen
-        // after 2 seconds
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable()
-        {
-            public void run()
-            {
-                // Starts the About Screen Activity
-                startActivity(new Intent(CloudRecoSplashScreen.this,
+       startActivity(new Intent(CloudRecoSplashScreen.this,
                         AboutScreen.class));
-            }
-        }, 2000L);
     }
 
 
@@ -48,6 +38,5 @@ public class CloudRecoSplashScreen extends Activity
     {
         // Manages auto rotation for the Splash Screen Layout
         super.onConfigurationChanged(newConfig);
-        setContentView(R.layout.splash_screen);
     }
 }
