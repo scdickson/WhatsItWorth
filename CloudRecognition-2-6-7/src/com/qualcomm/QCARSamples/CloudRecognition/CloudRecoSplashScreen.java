@@ -30,7 +30,7 @@ public class CloudRecoSplashScreen extends Activity
         //setContentView(R.layout.splash_screen);
 
        startActivity(new Intent(CloudRecoSplashScreen.this,
-                        AboutScreen.class));
+                        CloudReco.class));
     }
 
 
