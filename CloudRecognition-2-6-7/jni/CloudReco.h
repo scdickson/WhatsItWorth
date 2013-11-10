@@ -208,8 +208,8 @@ int lastErrorCode = 0;
 // your credentials, especially with untrusted third parties, and should
 // take the appropriate steps to protect them within your application code
 // ----------------------------------------------------------------------------
-static const char* kAccessKey = "a580c1512b42e81428fdc68a825b6317f098633c";
-static const char* kSecretKey = "5fbda9b63d92ab2450c292f3b79f84fce7e228e5";
+static const char* kAccessKey = "981e67ea98101f17efb18ceac4f64735a8ceb03c";
+static const char* kSecretKey = "2bf75db408eefb28644c12e4c0d20d242233f7ff";
 
 // ----------------------------------------------------------------------------
 // Whether the cloudReco was started:
