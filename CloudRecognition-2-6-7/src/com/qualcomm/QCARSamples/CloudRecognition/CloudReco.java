@@ -134,7 +134,7 @@ public class CloudReco extends Activity
     private boolean mIsLoadingBookData = false;
 
     // AsyncTask to get book data from a json object
-    private GetBookDataTask mGetBookDataTask;
+    private GetCardDataTask mGetCardDataTask;
 
     // Our OpenGL view:
     private QCARSampleGLView mGlView;
@@ -1008,7 +1008,7 @@ public class CloudReco extends Activity
                 {
 
                     // Cancels the AsyncTask
-                    mGetBookDataTask.cancel(true);
+                    mGetCardDataTask.cancel(true);
                     mIsLoadingBookData = false;
 
                     // Cleans the Target Tracker Id
@@ -1182,13 +1182,13 @@ public class CloudReco extends Activity
         }
 
         // Searches for the book data in an AsyncTask
-        mGetBookDataTask = new GetBookDataTask();
-        mGetBookDataTask.execute();
+        mGetCardDataTask = new GetCardDataTask();
+        mGetCardDataTask.execute();
     }
 
 
     /** Gets the book data from a JSON Object */
-    private class GetBookDataTask extends AsyncTask<Void, Void, Void>
+    private class GetCardDataTask extends AsyncTask<Void, Void, Void>
     {
         private String mBookDataJSONFullUrl;
         private static final String CHARSET = "UTF-8";

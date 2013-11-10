@@ -58,29 +58,29 @@ public class CardOverlayView extends RelativeLayout
     /** Sets Card Name in View */
     public void setCardName(String cardName)
     {
-        TextView tv = (TextView) findViewById(R.id.card_name);
-        tv.setText(cardName);
+        //TextView tv = (TextView) findViewById(R.id.card_name);
+        //tv.setText(cardName);
     }
     
     /**Sets Card Price Low in View */
     public void setCardPriceLow(String cardPriceLow)
     {
-    	TextView tv = (TextView) findViewById(R.id.low_price);
-    	tv.setText(cardPriceLow);
+    	//TextView tv = (TextView) findViewById(R.id.low_price);
+    	//tv.setText(cardPriceLow);
     }
     
     /**Sets Card Price Med. in View */
     public void setCardPriceMed(String cardPriceMed)
     {
-    	TextView tv = (TextView) findViewById(R.id.med_price);
-    	tv.setText(cardPriceMed);
+    	//TextView tv = (TextView) findViewById(R.id.med_price);
+    	//tv.setText(cardPriceMed);
     }
     
     /**Sets Card Price Hi. in View */
     public void setCardPriceHi(String cardPriceHi)
     {
-    	TextView tv = (TextView) findViewById(R.id.hi_price);
-    	tv.setText(cardPriceHi);
+    	//TextView tv = (TextView) findViewById(R.id.hi_price);
+    	//tv.setText(cardPriceHi);
     }
 
 }
