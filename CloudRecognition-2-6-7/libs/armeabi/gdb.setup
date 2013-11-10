@@ -1,0 +1,2 @@
+set solib-search-path ./obj/local/armeabi
+directory C:/Users/Nix/Development/adt-bundle-windows-x86_64-20131030/android-ndk-r9b/platforms/android-8/arch-arm/usr/include C:/Users/Nix/Development/adt-bundle-windows-x86_64-20131030/android-ndk-r9b/sources/cxx-stl/system/include jni/../../../build/include
