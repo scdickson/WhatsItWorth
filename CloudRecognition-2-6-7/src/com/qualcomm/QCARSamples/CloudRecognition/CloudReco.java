@@ -56,9 +56,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.qualcomm.QCAR.QCAR;
-import com.qualcomm.QCARSamples.CloudRecognition.model.Book;
+import com.qualcomm.QCARSamples.CloudRecognition.model.Card;
 import com.qualcomm.QCARSamples.CloudRecognition.utils.DebugLog;
-import com.qualcomm.QCARSamples.CloudRecognition.view.BookOverlayView;
+import com.qualcomm.QCARSamples.CloudRecognition.view.CardOverlayView;
 
 
 /** The main activity for the CloudReco sample. */
@@ -128,7 +128,7 @@ public class CloudReco extends Activity
     private String mStatusBarText;
 
     // Active Book Data
-    private Book mBookData;
+    private Card mBookData;
     private String mBookJSONUrl;
     private View mLoadingDialogContainer;
     private Texture mBookDataTexture;
@@ -1262,7 +1262,7 @@ public class CloudReco extends Activity
                 JSONObject jsonObject = new JSONObject(builder.toString());
 
                 // Generates a new Book Object with the JSON object data
-                mBookData = new Book();
+                mBookData = new Card();
 
                 mBookData.setTitle(jsonObject.getString("title"));
                 mBookData.setAuthor(jsonObject.getString("author"));
@@ -1307,7 +1307,7 @@ public class CloudReco extends Activity
             if (mBookData != null)
             {
                 // Generates a View to display the book data
-                BookOverlayView productView = new BookOverlayView(
+                CardOverlayView productView = new CardOverlayView(
                         CloudReco.this);
 
                 // Updates the view used as a 3d Texture
@@ -1422,7 +1422,7 @@ public class CloudReco extends Activity
 
 
     /** Updates a BookOverlayView with the Book data specified in parameters */
-    private void updateProductView(BookOverlayView productView, Book book)
+    private void updateProductView(CardOverlayView productView, Card book)
     {
         productView.setBookTitle(book.getTitle());
         productView.setBookPrice(book.getPriceList());

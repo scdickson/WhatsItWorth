@@ -8,7 +8,7 @@ package com.qualcomm.QCARSamples.CloudRecognition.model;
 import android.graphics.Bitmap;
 
 /** A support class encapsulating the info for one book*/
-public class Book
+public class Card
 {
     private String title;
     private String author;
@@ -21,7 +21,7 @@ public class Book
     private String bookUrl;
 
 
-    public Book()
+    public Card()
     {
 
     }

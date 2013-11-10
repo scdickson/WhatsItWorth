@@ -23,21 +23,21 @@ import android.widget.TextView;
 import com.qualcomm.QCARSamples.CloudRecognition.R;
 
 /** Custom View with Book Overlay Data */
-public class BookOverlayView extends RelativeLayout
+public class CardOverlayView extends RelativeLayout
 {
-    public BookOverlayView(Context context)
+    public CardOverlayView(Context context)
     {
         this(context, null);
     }
 
 
-    public BookOverlayView(Context context, AttributeSet attrs)
+    public CardOverlayView(Context context, AttributeSet attrs)
     {
         this(context, attrs, 0);
     }
 
 
-    public BookOverlayView(Context context, AttributeSet attrs, int defStyle)
+    public CardOverlayView(Context context, AttributeSet attrs, int defStyle)
     {
         super(context, attrs, defStyle);
         inflateLayout(context);
