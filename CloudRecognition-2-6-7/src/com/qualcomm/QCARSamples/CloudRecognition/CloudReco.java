@@ -28,14 +28,11 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -127,9 +124,9 @@ public class CloudReco extends Activity
     // Status Bar Text
     private String mStatusBarText;
 
-    // Active Book Data
-    private Card mBookData;
-    private String mBookJSONUrl;
+    // Active Card Data
+    private Card mCardData;
+    private String mCardJSONUrl;
     private View mLoadingDialogContainer;
     private Texture mBookDataTexture;
 
@@ -1062,6 +1059,7 @@ public class CloudReco extends Activity
     public void startWebView(int value)
     {
         // Checks that we have a valid book data
+    	/*
         if (mBookData != null)
         {
             // Starts an Intent to open the book URL
@@ -1070,6 +1068,7 @@ public class CloudReco extends Activity
 
             startActivity(viewIntent);
         }
+        */
     }
 
 
@@ -1172,7 +1171,7 @@ public class CloudReco extends Activity
     public void createProductTexture(String bookJSONUrl)
     {
         // gets book url from parameters
-        mBookJSONUrl = bookJSONUrl.trim();
+        mCardJSONUrl = bookJSONUrl.trim();
 
         // Cleans old texture reference if necessary
         if (mBookDataTexture != null)
@@ -1203,7 +1202,7 @@ public class CloudReco extends Activity
             // for the data
             StringBuilder sBuilder = new StringBuilder();
             sBuilder.append(mServerURL);
-            sBuilder.append(mBookJSONUrl);
+            sBuilder.append(mCardJSONUrl);
 
             mBookDataJSONFullUrl = sBuilder.toString();
 
@@ -1231,7 +1230,7 @@ public class CloudReco extends Activity
                 if (status != HttpURLConnection.HTTP_OK)
                 {
                     // Cleans book data variables
-                    mBookData = null;
+                    mCardData = null;
                     mBookInfoStatus = BOOKINFO_NOT_DISPLAYED;
 
                     // Hides loading dialog
@@ -1253,26 +1252,24 @@ public class CloudReco extends Activity
                 }
 
                 // Cleans any old reference to mBookData
-                if (mBookData != null)
+                if (mCardData != null)
                 {
-                    mBookData = null;
+                    mCardData = null;
 
                 }
 
                 JSONObject jsonObject = new JSONObject(builder.toString());
 
                 // Generates a new Book Object with the JSON object data
-                mBookData = new Card();
+                mCardData = new Card();
 
-                mBookData.setTitle(jsonObject.getString("title"));
-                mBookData.setAuthor(jsonObject.getString("author"));
-                mBookData.setBookUrl(jsonObject.getString("bookurl"));
-                mBookData.setPriceList(jsonObject.getString("list price"));
-                mBookData.setPriceYour(jsonObject.getString("your price"));
-                mBookData.setRatingAvg(jsonObject.getString("average rating"));
-                mBookData.setRatingTotal(jsonObject.getString("# of ratings"));
+                mCardData.setName(jsonObject.getString("name"));
+                mCardData.setPriceLow(jsonObject.getString("priceLow"));
+                mCardData.setPriceMed(jsonObject.getString("priceMed"));
+                mCardData.setPriceHi(jsonObject.getString("priceHi"));
 
                 // Gets the book thumb image
+                /*
                 byte[] thumb = downloadImage(jsonObject.getString("thumburl"));
 
                 if (thumb != null)
@@ -1280,8 +1277,9 @@ public class CloudReco extends Activity
 
                     Bitmap bitmap = BitmapFactory.decodeByteArray(thumb, 0,
                             thumb.length);
-                    mBookData.setThumb(bitmap);
+                    mCardData.setThumb(bitmap);
                 }
+                */
             }
             catch (Exception e)
             {
@@ -1304,14 +1302,14 @@ public class CloudReco extends Activity
 
         protected void onPostExecute(Void result)
         {
-            if (mBookData != null)
+            if (mCardData != null)
             {
                 // Generates a View to display the book data
                 CardOverlayView productView = new CardOverlayView(
                         CloudReco.this);
 
                 // Updates the view used as a 3d Texture
-                updateProductView(productView, mBookData);
+                updateProductView(productView, mCardData);
 
                 // Sets the layout params
                 productView.setLayoutParams(new LayoutParams(
@@ -1422,15 +1420,12 @@ public class CloudReco extends Activity
 
 
     /** Updates a BookOverlayView with the Book data specified in parameters */
-    private void updateProductView(CardOverlayView productView, Card book)
+    private void updateProductView(CardOverlayView productView, Card card)
     {
-        productView.setBookTitle(book.getTitle());
-        productView.setBookPrice(book.getPriceList());
-        productView.setYourPrice(book.getPriceYour());
-        productView.setBookRatingCount(book.getRatingTotal());
-        productView.setRating(book.getRatingAvg());
-        productView.setBookAuthor(book.getAuthor());
-        productView.setCoverViewFromBitmap(book.getThumb());
+        productView.setCardName(card.getName());
+        productView.setCardPriceLow(card.getPriceLow());
+        productView.setCardPriceMed(card.getPriceMed());
+        productView.setCardPriceHi(card.getPriceHi());
     }
 
 

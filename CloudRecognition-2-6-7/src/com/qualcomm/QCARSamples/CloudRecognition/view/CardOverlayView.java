@@ -55,61 +55,32 @@ public class CardOverlayView extends RelativeLayout
         inflater.inflate(R.layout.bitmap_layout, this, true);
     }
 
-
-    /** Sets Book title in View */
-    public void setBookTitle(String bookTitle)
+    /** Sets Card Name in View */
+    public void setCardName(String cardName)
     {
-        TextView tv = (TextView) findViewById(R.id.custom_view_title);
-        tv.setText(bookTitle);
+        TextView tv = (TextView) findViewById(R.id.card_name);
+        tv.setText(cardName);
+    }
+    
+    /**Sets Card Price Low in View */
+    public void setCardPriceLow(String cardPriceLow)
+    {
+    	TextView tv = (TextView) findViewById(R.id.low_price);
+    	tv.setText(cardPriceLow);
+    }
+    
+    /**Sets Card Price Med. in View */
+    public void setCardPriceMed(String cardPriceMed)
+    {
+    	TextView tv = (TextView) findViewById(R.id.med_price);
+    	tv.setText(cardPriceMed);
+    }
+    
+    /**Sets Card Price Hi. in View */
+    public void setCardPriceHi(String cardPriceHi)
+    {
+    	TextView tv = (TextView) findViewById(R.id.hi_price);
+    	tv.setText(cardPriceHi);
     }
 
-
-    /** Sets Book Author in View */
-    public void setBookAuthor(String bookAuthor)
-    {
-        TextView tv = (TextView) findViewById(R.id.custom_view_author);
-        tv.setText(bookAuthor);
-    }
-
-
-    /** Sets Book Price in View */
-    public void setBookPrice(String bookPrice)
-    {
-        TextView tv = (TextView) findViewById(R.id.custom_view_price_old);
-        tv.setText(getContext().getString(R.string.string_$) + bookPrice);
-    }
-
-
-    /** Sets Book Number of Ratings in View */
-    public void setBookRatingCount(String ratingCount)
-    {
-        TextView tv = (TextView) findViewById(R.id.custom_view_rating_text);
-        tv.setText(getContext().getString(R.string.string_openParentheses)
-                + ratingCount + getContext().getString(R.string.string_ratings)
-                + getContext().getString(R.string.string_closeParentheses));
-    }
-
-
-    /** Sets Book Special Price in View */
-    public void setYourPrice(String yourPrice)
-    {
-        TextView tv = (TextView) findViewById(R.id.badge_price_value);
-        tv.setText(getContext().getString(R.string.string_$) + yourPrice);
-    }
-
-
-    /** Sets Book Cover in View from a bitmap */
-    public void setCoverViewFromBitmap(Bitmap coverBook)
-    {
-        ImageView iv = (ImageView) findViewById(R.id.custom_view_book_cover);
-        iv.setImageBitmap(coverBook);
-    }
-
-
-    /** Sets Book Rating in View */
-    public void setRating(String rating)
-    {
-        RatingBar rb = (RatingBar) findViewById(R.id.custom_view_rating);
-        rb.setRating(Float.parseFloat(rating));
-    }
 }

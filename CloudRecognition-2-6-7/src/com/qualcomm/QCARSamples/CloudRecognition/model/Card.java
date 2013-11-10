@@ -5,20 +5,13 @@ All Rights Reserved.
 ==============================================================================*/
 package com.qualcomm.QCARSamples.CloudRecognition.model;
 
-import android.graphics.Bitmap;
-
 /** A support class encapsulating the info for one book*/
 public class Card
 {
-    private String title;
-    private String author;
-    private String ratingAvg;
-    private String ratingTotal;
-    private String priceList;
-    private String priceYour;
-    private String targetId;
-    private Bitmap thumb;
-    private String bookUrl;
+    private String name;
+    private String priceLow;
+    private String priceMed;
+    private String priceHi;
 
 
     public Card()
@@ -27,118 +20,44 @@ public class Card
     }
 
 
-    public String getTitle()
+    public String getName()
     {
-        return title;
+        return name;
     }
 
 
-    public void setTitle(String title)
+    public void setName(String name)
     {
-        this.title = title;
+        this.name = name;
     }
-
-
-    public String getAuthor()
+    
+    public String getPriceLow()
     {
-        return author;
+    	return priceLow;
     }
-
-
-    public void setAuthor(String author)
+    
+    public void setPriceLow(String priceLow)
     {
-        this.author = author;
+    	this.priceLow = priceLow;
     }
-
-
-    public String getRatingAvg()
+    
+    public String getPriceMed()
     {
-        return ratingAvg;
+    	return priceMed;
     }
-
-
-    public void setRatingAvg(String ratingAvg)
+    
+    public void setPriceMed(String priceMed)
     {
-        this.ratingAvg = ratingAvg;
+    	this.priceMed = priceMed;
     }
-
-
-    public String getRatingTotal()
+    
+    public String getPriceHi()
     {
-        return ratingTotal;
+    	return priceHi;
     }
-
-
-    public void setRatingTotal(String ratingTotal)
+    
+    public void setPriceHi(String priceHi)
     {
-        this.ratingTotal = ratingTotal;
-    }
-
-
-    public String getPriceList()
-    {
-        return priceList;
-    }
-
-
-    public void setPriceList(String priceList)
-    {
-        this.priceList = priceList;
-    }
-
-
-    public String getPriceYour()
-    {
-        return priceYour;
-    }
-
-
-    public void setPriceYour(String priceYour)
-    {
-        this.priceYour = priceYour;
-    }
-
-
-    public String getTargetId()
-    {
-        return targetId;
-    }
-
-
-    public void setTargetId(String targetId)
-    {
-        this.targetId = targetId;
-    }
-
-
-    public Bitmap getThumb()
-    {
-        return thumb;
-    }
-
-
-    public void setThumb(Bitmap thumb)
-    {
-        this.thumb = thumb;
-    }
-
-
-    public String getBookUrl()
-    {
-        return bookUrl;
-    }
-
-
-    public void setBookUrl(String bookUrl)
-    {
-        this.bookUrl = bookUrl;
-    }
-
-
-    public void recycle()
-    {
-        // Cleans the Thumb bitmap variable
-        thumb.recycle();
-        thumb = null;
+    	this.priceHi = priceHi;
     }
 }
