@@ -62,7 +62,7 @@ import com.qualcomm.QCARSamples.CloudRecognition.view.CardOverlayView;
 public class CloudReco extends Activity
 {
     // Defines the Server URL to get the books data
-    private static final String mServerURL = "https://ar.qualcomm.at/samples/cloudreco/json/";
+    private static final String mServerURL = "https://s3.amazonaws.com/blobgame/";
 
     // Different screen orientations supported by the CloudReco system.
     public static final int SCREEN_ORIENTATION_LANDSCAPE = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
