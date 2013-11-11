@@ -18,7 +18,7 @@ public class itemCache
     Type mtgCard;  
     mtgCard = Type.Card;
     //db.insertObject(mtgCard, "Pack Rat");
-    String[] prices = db.getPrice("Pack Rat");
+    String[] prices = db.getPrice(mtgCard, "Pack Rat");
     System.out.println("low: " + prices[0]);
     System.out.println("median: " + prices[1]);
     System.out.println("high: " + prices[2]);
@@ -45,7 +45,7 @@ public class itemCache
     results = conn.query(query);
   }
   
-  public String[] getPrice(String name)
+  public String[] getPrice(Type objectType, String name)
   {
     String[] prices = new String[3];
     //Query db for price of object and lastUpdate
@@ -69,8 +69,28 @@ public class itemCache
     if(curr.after(temp)){
     	//get current prices
     	System.out.println("Calling scraper!");
-	TCGScraper scraper = new TCGScraper();
-    	prices = scraper.getPrice(name);
+	if(objectType == Type.Card){ 
+		TCGScraper scraper = new TCGScraper();
+    		prices = scraper.getPrice(name);
+	}
+	else if(objectType == Type.Currency)
+	{
+		CurrencyConverter cc = new CurrencyConverter();
+		//HOW DAFUQ DO I CONVERT?
+	}
+	else if(objectType == Type.Stamp){
+		//Call stamp scraper
+	}
+	else{
+		//not a valid type
+		prices[0] = null;
+		prices[1] = null;
+		prices[2] = null;
+		return prices;
+	}
+	prices[0] = prices[0].replace("price_Low: ", "");
+	prices[1] = prices[1].replace("price_Median: ", "");
+	prices[2] = prices[2].replace("price_High: ", "");
     	//insert prices and update timestamp
     	//UPDATE itemCache
     	//SET last_Update = 'curr', price_Low = 'prices[0]', price_Median = 'prices[1]', price_High = 'prices[2]'
@@ -79,23 +99,24 @@ public class itemCache
     	query = "UPDATE itemCache SET last_Update = \'" + ft.format(curr) + "\', price_Low = \'" + prices[0] + "\', price_Median = \'" + prices[1] + "\', price_High = \'" + prices[2] + "\'";
     	query = query + " WHERE Name = \'" + name + "\';";
     	results = conn.query(query);
+	return prices;
     } 
     //return price as String[]
     //Get low price
     query = "SELECT price_Low FROM itemCache WHERE name = \'" + name + "\';";
     results = conn.query(query);
     String temp2 = results.get(0);
-    prices[0] = temp2.replace("price_Low: ", "");
+    prices[0] = temp2.replace("PRICE LOW: ", "");
     //Get median price
     query = "SELECT price_Median FROM itemCache WHERE name = \'" + name + "\';";
     results = conn.query(query);
     temp2 = results.get(0);
-    prices[1] = temp2.replace("price_Median: ", "");
+    prices[1] = temp2.replace("PRICE MEDIAN: ", "");
     //Get high price
     query = "SELECT price_High FROM itemCache WHERE name = \'" + name + "\'";
     results = conn.query(query);
     temp2 = results.get(0);
-    prices[2] = temp2.replace("price_High: ", "");
+    prices[2] = temp2.replace("PRICE HIGH: ", "");
     return prices;
   }
 

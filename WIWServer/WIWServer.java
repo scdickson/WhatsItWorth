@@ -57,6 +57,8 @@ public class WIWServer
 
 	public void listen()
 	{
+		//DetectCard ben = new DetectCard();
+		//System.err.println("THE ANSWER TO LIFE IS " + ben.run("Squire.jpg", "Camera.jpg"));
 		while(isRunning)
 		{
 			try
@@ -184,9 +186,11 @@ public class WIWServer
 
 		public void run()
 		{
+			String fileName = null;
+
 			try
 			{
-				DataInputStream dis = new DataInputStream(in);
+				/*DataInputStream dis = new DataInputStream(in);
 				int length = dis.readInt();
 				System.err.println("\t--Getting " + length + " bytes from client...");
 				byte file[] = new byte[length];
@@ -194,22 +198,39 @@ public class WIWServer
 				System.err.println("\t--" + length + " bytes successfully received!");
 				InputStream is = new ByteArrayInputStream(file);
 				BufferedImage bi = ImageIO.read(is);
-				ImageIO.write(bi, "jpg", new File(System.currentTimeMillis() + ".jpg"));
-			}
-			catch(Exception e)
-			{
-				e.printStackTrace();
-			}
-			String cards[] = {"Pack Rat", "Chronomaton", "Druid's Familiar", "Vent Sentinel", "Azorius Charm", "AEtherling", "Spear of Heliod", "Angel of Serenity"};
-			Random generator = new Random(System.currentTimeMillis());
-			try
-			{
+				fileName = System.currentTimeMillis() + ".jpg";
+				ImageIO.write(bi, "jpg", new File(fileName));*/
+
+				DataInputStream dis = new DataInputStream(in);
+				String[] objectData = dis.readUTF().split(";");
+				System.err.println("\t--Received: " + objectData[1] + " of type " + objectData[0]);
+				itemCache DBRequest = new itemCache("192.168.1.12", 3306, "root", "kpcofgs");
+				Type objectType = null;
+				if(objectData[0].equalsIgnoreCase("C"))
+				{
+					objectType = Type.Card;
+				}
+				else if(objectData[0].equalsIgnoreCase("M"))
+				{
+					objectType = Type.Currency;
+				}
+				else if(objectData[0].equalsIgnoreCase("S"))
+				{
+					objectType = Type.Stamp;
+				}
+
+				String result = "";
+
+				for(String s : (DBRequest.getPrice(objectType, objectData[1])))
+				{
+					result += s + ";";
+				}
+				
+				System.err.println("\t--Returning: " + result);
 				PrintWriter writer = new PrintWriter(out);
-				String card = cards[generator.nextInt(cards.length)];
-				writer.println(card);
+				writer.println(result.substring(0, result.length()-1));
 				writer.flush();
-				System.err.println("\t--Sending back " + card);
-				finish();
+
 
 				if(WIWConstants.DO_PING)
 				{
@@ -219,11 +240,14 @@ public class WIWServer
 				{
 					finish();
 				}
+
 			}
 			catch(Exception e)
 			{
 				e.printStackTrace();
 			}
+
+
 		}
 
 		private class WIWServerThreadPing extends Thread

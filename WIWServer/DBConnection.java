@@ -48,7 +48,7 @@ public class DBConnection
                         }
                         Class.forName ("com.mysql.jdbc.Driver").newInstance();
                         c = DriverManager.getConnection(url, username, password);
-                        getConnectionStatus();
+                        //getConnectionStatus();
                 }
                 catch(Exception e)
                 {
@@ -69,7 +69,7 @@ public class DBConnection
                 {
                         c.close();
                         c = null;
-                        getConnectionStatus();
+                        //getConnectionStatus();
                 }
                 catch(Exception e)
                 {
