@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:background="@color/semi_transparent_black"
     android:padding="10dp" >
 
     <TextView
@@ -10,7 +11,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="Squire"
-        android:textColor="@android:color/black"
+        android:textColor="@color/holo_light_blue"
         android:textSize="20sp" />
 
     <ImageView
@@ -35,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="L:"
-            android:textColor="#FF0000"
+            android:textColor="#FF8888"
             android:textSize="15sp" />
 
         <TextView
@@ -44,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="0.80"
-            android:textColor="#FF0000"
+            android:textColor="#FF8888"
             android:textSize="15sp" />
 
         <TextView
@@ -52,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="M:"
-            android:textColor="#0000FF"
+            android:textColor="#8888FF"
             android:textSize="15sp" />
 
         <TextView
@@ -61,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="0.90"
-            android:textColor="#0000FF"
+            android:textColor="#8888FF"
             android:textSize="15sp" />
 
         <TextView
@@ -69,7 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="H:"
-            android:textColor="#00FF00"
+            android:textColor="#88FF88"
             android:textSize="15sp" />
 
         <TextView
@@ -78,7 +79,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="1.80"
-            android:textColor="#00FF00"
+            android:textColor="#88FF88"
             android:textSize="15sp" />
     </LinearLayout>
 
