@@ -14,13 +14,18 @@ package com.qualcomm.QCARSamples.CloudRecognition;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
 import java.net.HttpURLConnection;
+import java.net.InetAddress;
+import java.net.Socket;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.concurrent.ExecutionException;
 
 import org.apache.http.util.ByteArrayBuffer;
 import org.json.JSONObject;
@@ -38,6 +43,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -135,6 +141,8 @@ public class CloudReco extends Activity
 
     // AsyncTask to get book data from a json object
     private GetCardDataTask mGetCardDataTask;
+
+    private PullCardData mPullCardData;
 
     // Our OpenGL view:
     private QCARSampleGLView mGlView;
@@ -1008,7 +1016,8 @@ public class CloudReco extends Activity
                 {
 
                     // Cancels the AsyncTask
-                    mGetCardDataTask.cancel(true);
+                    // mGetCardDataTask.cancel(true);
+                	mPullCardData.cancel(true);
                     mIsLoadingBookData = false;
 
                     // Cleans the Target Tracker Id
@@ -1171,22 +1180,157 @@ public class CloudReco extends Activity
     public void createProductTexture(String bookJSONUrl)
     {
         // gets book url from parameters
-        mCardJSONUrl = bookJSONUrl.trim();
+        //mCardJSONUrl = bookJSONUrl.trim();
 
         // Cleans old texture reference if necessary
         if (mBookDataTexture != null)
         {
             mBookDataTexture = null;
-
             System.gc();
         }
 
+        String[] in = bookJSONUrl.split(";");
+
+        mPullCardData = new PullCardData();
+        String result[] = null;
+        try {
+        	result = mPullCardData.execute(bookJSONUrl).get();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			e.printStackTrace();
+		}
+        if (result != null){
+        	Log.e("Asdf",result[0]);
+            // Generates a new Book Object with the JSON object data
+            mCardData = new Card();
+            mCardData.setName(in[1]);
+            mCardData.setPriceLow(result[0]);
+            mCardData.setPriceMed(result[1]);
+            mCardData.setPriceHi(result[2]);
+        }
         // Searches for the book data in an AsyncTask
-        mGetCardDataTask = new GetCardDataTask();
-        mGetCardDataTask.execute();
+        // mGetCardDataTask = new GetCardDataTask();
+        // mGetCardDataTask.execute();
     }
 
 
+    private class PullCardData extends AsyncTask<String, Void, String[]>
+    {
+    	private int port = 9998;
+    	private String address = "98.226.145.27"; 
+
+		protected String[] doInBackground(String... params) {
+			String[] result= null;
+			try{
+			InetAddress serverAddr = InetAddress.getByName(address);
+			Socket ioSocket= new Socket(serverAddr, port);
+			
+			DataOutputStream out = new DataOutputStream(ioSocket.getOutputStream());
+			DataInputStream in = new DataInputStream(ioSocket.getInputStream());
+
+			out.writeUTF(params[0]);
+			out.flush();
+		
+			byte[] cardBuffer = new byte[1024];
+			in.read(cardBuffer);
+			String tmp = new String(cardBuffer, "UTF-8");
+			result = tmp.split(";");
+			
+			in.close();
+			out.close();
+			ioSocket.close();
+	
+			} catch (Exception e ){
+				e.printStackTrace();
+			}
+		// TODO Auto-generated method stub
+			return result;
+		}
+
+        protected void onPreExecute()
+        {
+            mIsLoadingBookData = true;
+        }
+
+        protected void onProgressUpdate(Void... values)
+        {
+
+        }
+
+        protected void onPostExecute(String[] result)
+        {
+            if (mCardData != null)
+            {
+                // Generates a View to display the book data
+                CardOverlayView productView = new CardOverlayView(
+                        CloudReco.this);
+
+                // Updates the view used as a 3d Texture
+                updateProductView(productView, mCardData);
+
+                // Sets the layout params
+                productView.setLayoutParams(new LayoutParams(
+                        RelativeLayout.LayoutParams.WRAP_CONTENT,
+                        RelativeLayout.LayoutParams.WRAP_CONTENT));
+
+                // Sets View measure - This size should be the same as the
+                // texture generated to display the overlay in order for the
+                // texture to be centered in screen
+                productView.measure(MeasureSpec.makeMeasureSpec(mTextureSize,
+                        MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(
+                        mTextureSize, MeasureSpec.EXACTLY));
+
+                // updates layout size
+                productView.layout(0, 0, productView.getMeasuredWidth(),
+                        productView.getMeasuredHeight());
+
+                // Draws the View into a Bitmap. Note we are allocating several
+                // large memory buffers thus attempt to clear them as soon as
+                // they are no longer required:
+                Bitmap bitmap = Bitmap.createBitmap(mTextureSize, mTextureSize,
+                        Bitmap.Config.ARGB_8888);
+                
+                Canvas c = new Canvas(bitmap);
+                productView.draw(c);
+
+                // Clear the product view as it is no longer needed
+                productView = null;
+                System.gc();
+                
+                // Allocate int buffer for pixel conversion and copy pixels
+                int width = bitmap.getWidth();
+                int height = bitmap.getHeight();
+                
+                int[] data = new int[bitmap.getWidth() * bitmap.getHeight()];
+                bitmap.getPixels(data, 0, bitmap.getWidth(), 0, 0, bitmap.getWidth(),
+                        bitmap.getHeight());
+                
+                // Recycle the bitmap object as it is no longer needed
+                bitmap.recycle();
+                bitmap = null;
+                c = null;
+                System.gc();   
+                
+                // Generates the Texture from the int buffer
+                mBookDataTexture = Texture.loadTextureFromIntBuffer(data,
+                                        width, height);
+
+                // Clear the int buffer as it is no longer needed
+                data = null;
+                System.gc(); 
+                                
+                // Hides the loading dialog from a UI thread
+                loadingDialogHandler.sendEmptyMessage(HIDE_LOADING_DIALOG);
+
+                mIsLoadingBookData = false;
+
+                productTextureIsCreated();
+            }
+        }
+    	
+    }
+    
     /** Gets the book data from a JSON Object */
     private class GetCardDataTask extends AsyncTask<Void, Void, Void>
     {
@@ -1202,7 +1346,7 @@ public class CloudReco extends Activity
             // for the data
             StringBuilder sBuilder = new StringBuilder();
             sBuilder.append(mServerURL);
-            sBuilder.append(mCardJSONUrl);
+            //sBuilder.append(mCardJSONUrl);
 
             mBookDataJSONFullUrl = sBuilder.toString();
 
