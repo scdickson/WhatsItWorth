@@ -132,15 +132,13 @@ public class CloudReco extends Activity
 
     // Active Card Data
     private Card mCardData;
-    private String mCardJSONUrl;
     private View mLoadingDialogContainer;
-    private Texture mBookDataTexture;
+    
+    // Texture for Item
+    private Texture mItemDataTexture;
 
     // Indicates if the app is currently loading the book data
     private boolean mIsLoadingBookData = false;
-
-    // AsyncTask to get book data from a json object
-    private GetCardDataTask mGetCardDataTask;
 
     private PullCardData mPullCardData;
 
@@ -1177,24 +1175,24 @@ public class CloudReco extends Activity
      * Generates a texture for the book data fecthing the book info from
      * the specified book URL
      */
-    public void createProductTexture(String bookJSONUrl)
+    public void createProductTexture(String aItemJSONUrl)
     {
         // gets book url from parameters
         //mCardJSONUrl = bookJSONUrl.trim();
 
         // Cleans old texture reference if necessary
-        if (mBookDataTexture != null)
+        if (mItemDataTexture != null)
         {
-            mBookDataTexture = null;
+            mItemDataTexture = null;
             System.gc();
         }
 
-        String[] in = bookJSONUrl.split(";");
+        String[] in = aItemJSONUrl.split(";");
 
         mPullCardData = new PullCardData();
         String result[] = null;
         try {
-        	result = mPullCardData.execute(bookJSONUrl).get();
+        	result = mPullCardData.execute(aItemJSONUrl).get();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (ExecutionException e) {
@@ -1209,9 +1207,6 @@ public class CloudReco extends Activity
             mCardData.setPriceMed(result[1]);
             mCardData.setPriceHi(result[2]);
         }
-        // Searches for the book data in an AsyncTask
-        // mGetCardDataTask = new GetCardDataTask();
-        // mGetCardDataTask.execute();
     }
 
 
@@ -1244,7 +1239,7 @@ public class CloudReco extends Activity
 			} catch (Exception e ){
 				e.printStackTrace();
 			}
-		// TODO Auto-generated method stub
+
 			return result;
 		}
 
@@ -1313,7 +1308,7 @@ public class CloudReco extends Activity
                 System.gc();   
                 
                 // Generates the Texture from the int buffer
-                mBookDataTexture = Texture.loadTextureFromIntBuffer(data,
+                mItemDataTexture = Texture.loadTextureFromIntBuffer(data,
                                         width, height);
 
                 // Clear the int buffer as it is no longer needed
@@ -1331,192 +1326,6 @@ public class CloudReco extends Activity
     	
     }
     
-    /** Gets the book data from a JSON Object */
-    private class GetCardDataTask extends AsyncTask<Void, Void, Void>
-    {
-        private String mBookDataJSONFullUrl;
-        private static final String CHARSET = "UTF-8";
-
-
-        protected void onPreExecute()
-        {
-            mIsLoadingBookData = true;
-
-            // Initialize the current book full url to search
-            // for the data
-            StringBuilder sBuilder = new StringBuilder();
-            sBuilder.append(mServerURL);
-            //sBuilder.append(mCardJSONUrl);
-
-            mBookDataJSONFullUrl = sBuilder.toString();
-
-            // Shows the loading dialog
-            loadingDialogHandler.sendEmptyMessage(SHOW_LOADING_DIALOG);
-        }
-
-
-        protected Void doInBackground(Void... params)
-        {
-            HttpURLConnection connection = null;
-
-            try
-            {
-                // Connects to the Server to get the book data
-                URL url = new URL(mBookDataJSONFullUrl);
-                connection = (HttpURLConnection) url.openConnection();
-                connection.setRequestProperty("Accept-Charset", CHARSET);
-                connection.connect();
-
-                int status = connection.getResponseCode();
-
-                // Checks that the book JSON url exists and connection
-                // has been successful
-                if (status != HttpURLConnection.HTTP_OK)
-                {
-                    // Cleans book data variables
-                    mCardData = null;
-                    mBookInfoStatus = BOOKINFO_NOT_DISPLAYED;
-
-                    // Hides loading dialog
-                    loadingDialogHandler.sendEmptyMessage(HIDE_LOADING_DIALOG);
-
-                    // Cleans current tracker Id and returns to scanning mode
-                    cleanTargetTrackedId();
-
-                    enterScanningMode();
-                }
-
-                BufferedReader reader = new BufferedReader(
-                        new InputStreamReader(connection.getInputStream()));
-                StringBuilder builder = new StringBuilder();
-                String line;
-                while ((line = reader.readLine()) != null)
-                {
-                    builder.append(line);
-                }
-
-                // Cleans any old reference to mBookData
-                if (mCardData != null)
-                {
-                    mCardData = null;
-
-                }
-
-                JSONObject jsonObject = new JSONObject(builder.toString());
-
-                // Generates a new Book Object with the JSON object data
-                mCardData = new Card();
-
-                mCardData.setName(jsonObject.getString("name"));
-                mCardData.setPriceLow(jsonObject.getString("priceLow"));
-                mCardData.setPriceMed(jsonObject.getString("priceMed"));
-                mCardData.setPriceHi(jsonObject.getString("priceHi"));
-
-                // Gets the book thumb image
-                /*
-                byte[] thumb = downloadImage(jsonObject.getString("thumburl"));
-
-                if (thumb != null)
-                {
-
-                    Bitmap bitmap = BitmapFactory.decodeByteArray(thumb, 0,
-                            thumb.length);
-                    mCardData.setThumb(bitmap);
-                }
-                */
-            }
-            catch (Exception e)
-            {
-                DebugLog.LOGD("Couldn't get books. e: " + e);
-            }
-            finally
-            {
-                connection.disconnect();
-            }
-
-            return null;
-        }
-
-
-        protected void onProgressUpdate(Void... values)
-        {
-
-        }
-
-
-        protected void onPostExecute(Void result)
-        {
-            if (mCardData != null)
-            {
-                // Generates a View to display the book data
-                CardOverlayView productView = new CardOverlayView(
-                        CloudReco.this);
-
-                // Updates the view used as a 3d Texture
-                updateProductView(productView, mCardData);
-
-                // Sets the layout params
-                productView.setLayoutParams(new LayoutParams(
-                        RelativeLayout.LayoutParams.WRAP_CONTENT,
-                        RelativeLayout.LayoutParams.WRAP_CONTENT));
-
-                // Sets View measure - This size should be the same as the
-                // texture generated to display the overlay in order for the
-                // texture to be centered in screen
-                productView.measure(MeasureSpec.makeMeasureSpec(mTextureSize,
-                        MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(
-                        mTextureSize, MeasureSpec.EXACTLY));
-
-                // updates layout size
-                productView.layout(0, 0, productView.getMeasuredWidth(),
-                        productView.getMeasuredHeight());
-
-                // Draws the View into a Bitmap. Note we are allocating several
-                // large memory buffers thus attempt to clear them as soon as
-                // they are no longer required:
-                Bitmap bitmap = Bitmap.createBitmap(mTextureSize, mTextureSize,
-                        Bitmap.Config.ARGB_8888);
-                
-                Canvas c = new Canvas(bitmap);
-                productView.draw(c);
-
-                // Clear the product view as it is no longer needed
-                productView = null;
-                System.gc();
-                
-                // Allocate int buffer for pixel conversion and copy pixels
-                int width = bitmap.getWidth();
-                int height = bitmap.getHeight();
-                
-                int[] data = new int[bitmap.getWidth() * bitmap.getHeight()];
-                bitmap.getPixels(data, 0, bitmap.getWidth(), 0, 0, bitmap.getWidth(),
-                        bitmap.getHeight());
-                
-                // Recycle the bitmap object as it is no longer needed
-                bitmap.recycle();
-                bitmap = null;
-                c = null;
-                System.gc();   
-                
-                // Generates the Texture from the int buffer
-                mBookDataTexture = Texture.loadTextureFromIntBuffer(data,
-                                        width, height);
-
-                // Clear the int buffer as it is no longer needed
-                data = null;
-                System.gc(); 
-                                
-                // Hides the loading dialog from a UI thread
-                loadingDialogHandler.sendEmptyMessage(HIDE_LOADING_DIALOG);
-
-                mIsLoadingBookData = false;
-
-                productTextureIsCreated();
-            }
-        }
-    }
-
-
     /**
      * Downloads and image from an Url specified as a paremeter returns the
      * array of bytes with the image Data for storing it on the Local Database
@@ -1559,7 +1368,7 @@ public class CloudReco extends Activity
     /** Returns the current Book Data Texture */
     private Texture getProductTexture()
     {
-        return mBookDataTexture;
+        return mItemDataTexture;
     }
 
 
