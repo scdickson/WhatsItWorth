@@ -36,12 +36,14 @@ import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -1177,20 +1179,23 @@ public class CloudReco extends Activity
      */
     public void createProductTexture(String aItemJSONUrl)
     {
-        // gets book url from parameters
-        //mCardJSONUrl = bookJSONUrl.trim();
-
         // Cleans old texture reference if necessary
         if (mItemDataTexture != null)
         {
             mItemDataTexture = null;
             System.gc();
         }
-
+        
+        //Breaks input into identifier and name
         String[] in = aItemJSONUrl.split(";");
-
+        
+        //Initialize Card with name
+        mCardData = new Card();
+        mCardData.setName(in[1]);
+        
+        //Task to get prices and graph
         mPullCardData = new PullCardData();
-        String result[] = null;
+        Object result[] = null;
         try {
         	result = mPullCardData.execute(aItemJSONUrl).get();
 		} catch (InterruptedException e) {
@@ -1198,25 +1203,16 @@ public class CloudReco extends Activity
 		} catch (ExecutionException e) {
 			e.printStackTrace();
 		}
-        if (result != null){
-        	Log.e("Asdf",result[0]);
-            // Generates a new Book Object with the JSON object data
-            mCardData = new Card();
-            mCardData.setName(in[1]);
-            mCardData.setPriceLow(result[0]);
-            mCardData.setPriceMed(result[1]);
-            mCardData.setPriceHi(result[2]);
-        }
     }
 
 
-    private class PullCardData extends AsyncTask<String, Void, String[]>
+    private class PullCardData extends AsyncTask<String, Void, Object[]>
     {
     	private int port = 9998;
     	private String address = "98.226.145.27"; 
 
-		protected String[] doInBackground(String... params) {
-			String[] result= null;
+		protected Object[] doInBackground(String... params) {
+			Object[] result = new Object[1];
 			try{
 			InetAddress serverAddr = InetAddress.getByName(address);
 			Socket ioSocket= new Socket(serverAddr, port);
@@ -1226,11 +1222,21 @@ public class CloudReco extends Activity
 
 			out.writeUTF(params[0]);
 			out.flush();
-		
-			byte[] cardBuffer = new byte[1024];
-			in.read(cardBuffer);
-			String tmp = new String(cardBuffer, "UTF-8");
-			result = tmp.split(";");
+			
+			//Get Prices and Graph
+			String tmpInput = in.readUTF();
+			String[] resultStrings = tmpInput.split(";");			
+			System.err.println(resultStrings[0] + ":" + resultStrings[1] + ":" + resultStrings[2]);
+			
+			//Set Prices and Graph into Card
+			mCardData.setPriceLow(resultStrings[0]);	
+            mCardData.setPriceMed(resultStrings[1]);
+            mCardData.setPriceHi(resultStrings[2]);          
+            byte[] resultBitmapBuffer = Base64.decode(resultStrings[3], 0);
+            mCardData.setGraph(BitmapFactory.decodeByteArray(resultBitmapBuffer, 0, resultBitmapBuffer.length));
+            
+			//Place holder
+			result[0] = resultStrings[0];
 			
 			in.close();
 			out.close();
@@ -1250,10 +1256,9 @@ public class CloudReco extends Activity
 
         protected void onProgressUpdate(Void... values)
         {
-
         }
 
-        protected void onPostExecute(String[] result)
+        protected void onPostExecute(Object[] result)
         {
             if (mCardData != null)
             {
@@ -1372,13 +1377,14 @@ public class CloudReco extends Activity
     }
 
 
-    /** Updates a BookOverlayView with the Book data specified in parameters */
+    /** Updates a CardOverlayView with the Card data specified in parameters */
     private void updateProductView(CardOverlayView productView, Card card)
     {
         productView.setCardName(card.getName());
         productView.setCardPriceLow(card.getPriceLow());
         productView.setCardPriceMed(card.getPriceMed());
         productView.setCardPriceHi(card.getPriceHi());
+        productView.setCardGraphImage(card.getGraph());
     }
 
 

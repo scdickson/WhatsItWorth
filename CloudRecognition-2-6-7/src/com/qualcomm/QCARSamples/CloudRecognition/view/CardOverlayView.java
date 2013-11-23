@@ -55,6 +55,16 @@ public class CardOverlayView extends RelativeLayout
         inflater.inflate(R.layout.bitmap_layout, this, true);
     }
 
+    /** Sets Graph Image in View */
+    public void setCardGraphImage(Bitmap graphImage)
+    {
+    	if(graphImage != null)
+    	{
+    		ImageView iv = (ImageView) findViewById(R.id.graph);
+    		iv.setImageBitmap(graphImage);
+    	}
+    }
+    
     /** Sets Card Name in View */
     public void setCardName(String cardName)
     {

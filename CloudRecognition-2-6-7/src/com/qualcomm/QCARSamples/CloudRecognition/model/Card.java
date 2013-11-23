@@ -5,6 +5,8 @@ All Rights Reserved.
 ==============================================================================*/
 package com.qualcomm.QCARSamples.CloudRecognition.model;
 
+import android.graphics.Bitmap;
+
 /** A support class encapsulating the info for one book*/
 public class Card
 {
@@ -12,7 +14,7 @@ public class Card
     private String priceLow;
     private String priceMed;
     private String priceHi;
-
+    private Bitmap graphBitmap;
 
     public Card()
     {
@@ -59,5 +61,15 @@ public class Card
     public void setPriceHi(String priceHi)
     {
     	this.priceHi = priceHi;
+    }
+    
+    public Bitmap getGraph()
+    {
+    	return graphBitmap;
+    }
+    
+    public void setGraph(Bitmap graphBitmap)
+    {
+    	this.graphBitmap = graphBitmap;
     }
 }
