@@ -62,8 +62,10 @@ import android.widget.Toast;
 
 import com.qualcomm.QCAR.QCAR;
 import com.qualcomm.QCARSamples.CloudRecognition.model.Card;
+import com.qualcomm.QCARSamples.CloudRecognition.model.Currency;
 import com.qualcomm.QCARSamples.CloudRecognition.utils.DebugLog;
 import com.qualcomm.QCARSamples.CloudRecognition.view.CardOverlayView;
+import com.qualcomm.QCARSamples.CloudRecognition.view.CurrencyOverlayView;
 
 
 /** The main activity for the CloudReco sample. */
@@ -132,8 +134,10 @@ public class CloudReco extends Activity
     // Status Bar Text
     private String mStatusBarText;
 
-    // Active Card Data
+    // Active Card/Currency Data
     private Card mCardData;
+    private Currency mCurrencyData;
+    
     private View mLoadingDialogContainer;
     
     // Texture for Item
@@ -142,7 +146,7 @@ public class CloudReco extends Activity
     // Indicates if the app is currently loading the book data
     private boolean mIsLoadingBookData = false;
 
-    private PullCardData mPullCardData;
+    private PullItemData mPullItemData;
 
     // Our OpenGL view:
     private QCARSampleGLView mGlView;
@@ -1017,7 +1021,7 @@ public class CloudReco extends Activity
 
                     // Cancels the AsyncTask
                     // mGetCardDataTask.cancel(true);
-                	mPullCardData.cancel(true);
+                	mPullItemData.cancel(true);
                     mIsLoadingBookData = false;
 
                     // Cleans the Target Tracker Id
@@ -1189,15 +1193,23 @@ public class CloudReco extends Activity
         //Breaks input into identifier and name
         String[] in = aItemJSONUrl.split(";");
         
-        //Initialize Card with name
-        mCardData = new Card();
-        mCardData.setName(in[1]);
+        if(in[0].equals("c"))
+        {
+	        //Initialize Card with name
+	        mCardData = new Card();
+	        mCardData.setName(in[1]);
+        }
+        else if(in[1].equals("m"))
+        {
+        	mCurrencyData = new Currency();
+        	mCurrencyData.setName(in[1]);
+        }
         
         //Task to get prices and graph
-        mPullCardData = new PullCardData();
-        Object result[] = null;
+        mPullItemData = new PullItemData();
+
         try {
-        	result = mPullCardData.execute(aItemJSONUrl).get();
+        	mPullItemData.execute(aItemJSONUrl).get();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (ExecutionException e) {
@@ -1206,14 +1218,16 @@ public class CloudReco extends Activity
     }
 
 
-    private class PullCardData extends AsyncTask<String, Void, Object[]>
+    private class PullItemData extends AsyncTask<String, Void, String[]>
     {
     	private int port = 9998;
     	private String address = "98.226.145.27"; 
 
-		protected Object[] doInBackground(String... params) {
-			Object[] result = new Object[1];
-			try{
+		protected String[] doInBackground(String... params) {
+		//Split for switch
+		String[] tmpOutput = params[0].split(";");
+			
+		try{
 			InetAddress serverAddr = InetAddress.getByName(address);
 			Socket ioSocket= new Socket(serverAddr, port);
 			
@@ -1226,17 +1240,20 @@ public class CloudReco extends Activity
 			//Get Prices and Graph
 			String tmpInput = in.readUTF();
 			String[] resultStrings = tmpInput.split(";");			
-			System.err.println(resultStrings[0] + ":" + resultStrings[1] + ":" + resultStrings[2]);
 			
-			//Set Prices and Graph into Card
-			mCardData.setPriceLow(resultStrings[0]);	
-            mCardData.setPriceMed(resultStrings[1]);
-            mCardData.setPriceHi(resultStrings[2]);          
-            byte[] resultBitmapBuffer = Base64.decode(resultStrings[3], 0);
-            mCardData.setGraph(BitmapFactory.decodeByteArray(resultBitmapBuffer, 0, resultBitmapBuffer.length));
-            
-			//Place holder
-			result[0] = resultStrings[0];
+			if(tmpOutput[0].equals("c"))
+			{
+				//Set Prices and Graph into Card
+				mCardData.setPriceLow(resultStrings[0]);	
+	            mCardData.setPriceMed(resultStrings[1]);
+	            mCardData.setPriceHi(resultStrings[2]);          
+	            byte[] resultBitmapBuffer = Base64.decode(resultStrings[3], 0);
+	            mCardData.setGraph(BitmapFactory.decodeByteArray(resultBitmapBuffer, 0, resultBitmapBuffer.length));
+			}
+			else if(tmpOutput[0].equals("m"))
+			{
+				mCurrencyData.setPrice(resultStrings[0]);
+			}
 			
 			in.close();
 			out.close();
@@ -1246,7 +1263,7 @@ public class CloudReco extends Activity
 				e.printStackTrace();
 			}
 
-			return result;
+			return tmpOutput;
 		}
 
         protected void onPreExecute()
@@ -1258,17 +1275,27 @@ public class CloudReco extends Activity
         {
         }
 
-        protected void onPostExecute(Object[] result)
+        protected void onPostExecute(String[] result)
         {
-            if (mCardData != null)
+            if (mCardData != null || mCurrencyData != null)
             {
-                // Generates a View to display the book data
-                CardOverlayView productView = new CardOverlayView(
-                        CloudReco.this);
-
-                // Updates the view used as a 3d Texture
-                updateProductView(productView, mCardData);
-
+            	RelativeLayout productView = null;
+                
+            	if(result[0].equals("c"))
+            	{
+	            	// Generates a View to display the book data
+	                productView = new CardOverlayView(
+	                        CloudReco.this);
+	
+	                // Updates the view used as a 3d Texture
+	                updateCardView((CardOverlayView)productView, mCardData);
+            	}
+            	else if(result[0].equals("m"))
+            	{
+            		productView = new CurrencyOverlayView(
+            				CloudReco.this);
+            		updateCurrencyView((CurrencyOverlayView)productView, mCurrencyData);
+            	}
                 // Sets the layout params
                 productView.setLayoutParams(new LayoutParams(
                         RelativeLayout.LayoutParams.WRAP_CONTENT,
@@ -1370,7 +1397,7 @@ public class CloudReco extends Activity
     }
 
 
-    /** Returns the current Book Data Texture */
+    /** Returns the current Data Texture */
     private Texture getProductTexture()
     {
         return mItemDataTexture;
@@ -1378,13 +1405,20 @@ public class CloudReco extends Activity
 
 
     /** Updates a CardOverlayView with the Card data specified in parameters */
-    private void updateProductView(CardOverlayView productView, Card card)
+    private void updateCardView(CardOverlayView productView, Card card)
     {
         productView.setCardName(card.getName());
         productView.setCardPriceLow(card.getPriceLow());
         productView.setCardPriceMed(card.getPriceMed());
         productView.setCardPriceHi(card.getPriceHi());
         productView.setCardGraphImage(card.getGraph());
+    }
+    
+    /** CurrencyOverlayView **/
+    private void updateCurrencyView(CurrencyOverlayView productView, Currency currency)
+    {
+    	productView.setCurrencyName(currency.getName());
+    	productView.setCurrencyPrice(currency.getPrice());
     }
 
 
