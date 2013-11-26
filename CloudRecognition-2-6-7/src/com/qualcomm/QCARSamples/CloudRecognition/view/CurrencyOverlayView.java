@@ -3,6 +3,7 @@ package com.qualcomm.QCARSamples.CloudRecognition.view;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -44,15 +45,16 @@ public class CurrencyOverlayView extends RelativeLayout
     /** Sets Currency Name in View */
     public void setCurrencyName(String CurrencyName)
     {
-       // TextView tv = (TextView) findViewById(R.id.Currency_name);
-       // tv.setText(CurrencyName);
+    	Log.d("CurrencyOverlay Name", CurrencyName);
+    	TextView tv = (TextView) findViewById(R.id.currency_name);
+    	tv.setText(CurrencyName);
     }
     
     /**Sets Currency Price Low in View */
     public void setCurrencyPrice(String CurrencyPrice)
     {
-           // TextView tv = (TextView) findViewById(R.id.currency_price);
-           // tv.setText(CurrencyPrice);
+    	TextView tv = (TextView) findViewById(R.id.currency_price);
+        tv.setText(CurrencyPrice);
     }
 
 }

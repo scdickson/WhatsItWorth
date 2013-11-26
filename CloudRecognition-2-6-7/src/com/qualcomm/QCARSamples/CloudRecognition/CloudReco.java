@@ -1199,10 +1199,10 @@ public class CloudReco extends Activity
 	        mCardData = new Card();
 	        mCardData.setName(in[1]);
         }
-        else if(in[1].equals("m"))
+        else if(in[0].equals("m"))
         {
         	mCurrencyData = new Currency();
-        	mCurrencyData.setName(in[1]);
+        	mCurrencyData.setName(in[1]);  
         }
         
         //Task to get prices and graph
