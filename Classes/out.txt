@@ -1,0 +1,4591 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  
+  <title>Serra Angel (Magic 2014 Core Set)</title>
+  <style type="text/css">
+   <!--
+    body {background: #fafafa url(http://magiccards.info/images/bg.gif) repeat-x;margin: 1em 1.5em;}
+    body,td,th {font: 0.9em/1.2em Verdana;color: #444;}
+    th {text-align: left; font-weight: bold;}
+    p {margin: 0.5em 0;}
+    a {color: #4666BC;}
+    a:hover {color: #333;background-color: #ff0;}
+    a:active {text-decoration: none;}
+    a:visited {color: #283C71;}
+    li.legal {color: #216728;}
+    li.restricted {color: #B98420;}
+    li.banned {color: #672121;}
+    li.reserve {color: #4F55CC;}
+    p.ctext {background-color: #fff;padding: 4px;}
+    p.otext {background-color: #fff;padding: 4px;}
+    div.oo {margin-left: 0em; padding: 0.5em 0 0 0; border: 1px solid #bbb; font-size: 75%;line-height: 100%;}
+    div.oo span {padding: 4px;}
+    div.oo p {margin: 0.5em 0 0 0;}
+    tr.odd {background-color: #e0e0e0;}
+    tr.even {background-color: #fafafa;}
+    #searchhelper td {line-height: 150%;vertical-align: middle;border-bottom: 1px dotted #999; padding: 5px 5px 5px 0;}
+    #searchhelper label {font-weight: bold;}
+    #searchhelper label.sl {font-weight: normal;}
+    #searchhelper table td {border: none; padding: 0; font-size: 1em;}
+    span.missing {color: #aaa;font-weight:bold;font-style:italic;}
+    dt {font-weight: bold; font-size: 110%; margin: 1em 0 0.5em 0;}
+    table#nav {font-size: 90%;}
+    ul {padding-left: 2em;}
+    .flag {vertical-align:-10%;}
+    .flag2 {vertical-align:-20%;}
+    .addition {color: red;}
+    a.ruleanchor {text-decoration: none; color: #E8DA58;}
+    li:target {background: #FAF7DC;}
+    -->
+  </style>
+  <script type="text/javascript">
+    <!--
+    function preventFocus() { isTop = false; }
+    function focusForm()    { if (isTop && document.f) { document.f.q.select(); } }
+    var isTop       = true;
+    window.onscroll = preventFocus;
+    window.onload   = focusForm;
+    // -->
+  </script>
+  <link rel="search" type="application/opensearchdescription+xml" title="MagicCards.Info" href="/opensearch.xml">
+</head>
+<body>
+<table width="100%" cellpadding="0" cellspacing="0" id="nav">
+    <tr>
+        <td>
+            <img src="http://magiccards.info/images/en.gif" alt="English" width="16" height="11" class="flag2">
+             <a href="/">Home</a>, 
+             <a href="/random.html">Random</a>, 
+             <a href="/art.html">Art Game</a>, 
+             <a href="/search.html"><b>Advanced</b></a>, 
+             <a href="/extras.html">Extras</a>, 
+             <a href="/rules.html">Rules</a>, 
+             <a href="/about.html">About</a>. 
+        </td>
+        <td align="right">
+            Sets: 
+            <a href="/ths/en.html">Theros</a>, <a href="/dgm/en.html">Dragon's Maze</a>, <a href="/m14/en.html">Magic 2014 Core Set</a>, <a href="/pd3/en.html">Graveborn</a>
+            &gt; <a href="/sitemap.html"><b>All Sets</b></a>
+        </td>
+    </tr>
+</table>
+<hr>
+<form method="GET" action="/query" style="font-size: 1.5em;" name="f">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center">
+  <tr>
+    <td nowrap="nowrap">
+        <label for="q">Query:</label> 
+        <input type="text" name="q" id="q" size="30" value="Serra Angel" style="font-size: 1em;" tabindex="1">
+        
+    </td>
+    <td align="right">
+      <select name="v" onchange="this.form.submit();">
+        <optgroup label="Select Output Format:">
+          
+          <option value="card" selected="selected">View as Cards with Scans</option>
+          <option value="olist">View as a List (Oracle)</option>
+          <option value="list">View as Checklist</option>
+          <option value="scan">View as Scans only</option>
+          <option value="spoiler">View as a Spoiler</option>
+        </optgroup>
+      </select>
+      <select name="s" onchange="this.form.submit();">
+        <optgroup label="Select Sort Order:">
+          
+          <option value="cname" selected="selected">Sort by Name &gt; Edition</option>
+          <option value="color">Sort by Color &gt; Name</option>
+          <option value="otype">Sort by Type &gt; Name</option>
+          <option value="cmc">Sort by Converted Mana Cost &gt; Name</option>
+          <option value="pow">Sort by Power &gt; Name</option>
+          <option value="tou">Sort by Toughness &gt; Name</option>
+          <option value="random">Sort by Random</option>
+          <option value="edition">Sort by Edition &gt; Name</option>
+          <option value="issue">Sort by Edition &gt; Collector's Number</option>
+        </optgroup>
+      </select>
+      <input type="submit" value="Search">
+    </td>
+  </tr>
+</table>
+</form>
+<hr>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+  <td align="left" width="35%">
+    
+    
+    &larr; <a href="/m14/en/31.html">Seraph of the Sword</a>
+    
+  </td>
+  <td align="center" width="30%">
+    <a href="/m14/en.html">Magic 2014 Core Set</a>
+  </td>
+  <td align="right" width="35%">
+    
+    
+    <a href="/m14/en/33.html">Show of Valor</a> &rarr;
+    
+  </td>
+</tr>
+</table>
+<hr />
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" style="margin: 0 0 0.5em 0;">
+  <tr>
+    <td width="312" valign="top">
+      <script type="text/javascript" src="http://partner.tcgplayer.com/x3/mchl.ashx?pk=MAGCINFO&amp;sid=69195"></script>
+      <img src="http://magiccards.info/scans/en/m14/32.jpg" 
+        alt="Serra Angel" width="312" height="445" style="border: 1px solid black;">
+    </td>
+    <td valign="top" style="padding: 0.5em;" width="70%">
+      <span style="font-size: 1.5em;">
+        <a href="/m14/en/32.html">Serra Angel</a>
+          <img src="http://magiccards.info/images/en.gif" alt="English"
+            width="16" height="11" class="flag">
+          
+      </span>
+      
+      
+        <p>Creature — Angel 4/4, 
+          3WW (5)
+          </p>
+        <p class="ctext"><b>Flying<br><br>Vigilance (Attacking doesn't cause this creature to tap.)</b></p>
+      
+
+      <p><i>Follow the light. In its absence, follow her.</i></p>
+      <p>Illus. Greg Staples</p>
+      <p><b>Gatherer Card Rulings<a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=370602">?</a>, Legality<a href="http://www.wizards.com/Magic/TCG/Resources.aspx?x=judge/resources/banned">?</a></b></p>
+      
+      <ul>
+        
+        
+        <li class="legal">Legal in Vintage (Type 1)</li>
+        
+        
+        <li class="legal">Legal in Legacy (Type 1.5)</li>
+        
+        <li class="legal">Legal in Extended (Type 1.X)</li>
+        
+        <li class="legal">Legal in Standard (Type 2)</li>
+        
+        
+        
+        
+        <li class="legal">Legal in Classic (MTGO)</li>
+        
+        <li class="legal">Legal in Commander</li>
+        
+        <li class="legal">Legal in Modern</li>
+        
+      </ul>
+    </td>
+    <td valign="top" style="padding: 0 0.5em;" width="30%">
+      <small>
+        
+        
+        
+        
+        <u><b>Printings:</b></u><br>
+        
+          
+            
+              <b>#32 (Greg Staples)</b><br>
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        <br><u><b>Editions:</b></u><br>
+        
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <b>Magic 2014 Core Set (Uncommon)</b><br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/m13/en/31.html">Magic 2013</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/m12/en/33.html">Magic 2012</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/cmd/en/30.html">Commander</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/m11/en/27.html">Magic 2011</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/m10/en/29.html">Magic 2010</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/dvd/en/10.html">Duel Decks: Divine vs. Demonic</a> (Rare)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/10e/en/39.html">Tenth Edition</a> (Rare)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/9e/en/43.html">Ninth Edition</a> (Rare)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/8e/en/45.html">Eighth Edition</a> (Rare)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/7e/en/42.html">Seventh Edition</a> (Rare)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/at/en/57.html">Anthologies</a> (Special)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/wotc/en/1.html">WotC Online Store</a> (Special)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/4e/en/300.html">Fourth Edition</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/rv/en/224.html">Revised Edition</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/cedi/en/225.html">International Collectors' Edition</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/ced/en/225.html">Collector's Edition</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/un/en/224.html">Unlimited Edition</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/be/en/225.html">Limited Edition Beta</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/al/en/223.html">Limited Edition Alpha</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/me4/en/25.html">MTGO Masters Edition IV</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        <br><u><b>Languages:</b></u><br>
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/de.gif" alt="German" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/de/32.html">Serra-Engel</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/fr.gif" alt="French" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/fr/32.html">Ange de Serra</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/it.gif" alt="Italian" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/it/32.html">Angelo di Serra</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/es.gif" alt="Spanish" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/es/32.html">Ángel de Serra</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/pt.gif" alt="Portuguese" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/pt/32.html">Anjo Serra</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/jp.gif" alt="Japanese" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/jp/32.html">セラの天使</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/cn.gif" alt="Simplified Chinese" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/cn/32.html">撒拉天使</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/ru.gif" alt="Russian" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/ru/32.html">Ангел Серры</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/tw.gif" alt="Traditional Chinese" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/tw/32.html">撒拉天使</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/ko.gif" alt="Korean" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/ko/32.html">세라 천사</a><br>
+              
+          
+        
+          
+        
+          
+        
+        
+
+        <br><br>
+        <a href="/query?q=%2B%2Bo%21%22Serra Angel%22&amp;v=olist">all prints in all languages</a>
+      </small>
+    </td>
+  </tr>
+</table>
+
+<hr />
+<table border="0" cellpadding="0" cellspacing="0" width="95%">
+    <tr>
+        <td valign="top" width="50%">
+            <b>Rules Questions / Links</b><br>
+                <a href="http://magic.tcgplayer.com/db/magic_single_card.asp?cn=Serra Angel&amp;partner=MAGCINFO">View All Prices for Serra Angel</a><br>
+                <a href="http://magic.tcgplayer.com/db/deck_search_result.asp?CardName=Serra Angel&amp;partner=MAGCINFO">View Decks with Serra Angel</a><br>
+                <a href="http://crystalkeep.com/cgi-bin/magicsearch.cgi?cardName=Serra Angel">Crystal Keep Rulings Summaries</a><br>
+                <a href="http://www.google.com/search?hl=en&amp;q=%22Serra Angel%22+site%3Amtgsalvation.com+inurl%3Acranial">Cranial Insertion (MTG Salvation)</a><br>
+                
+                <br>
+            <b>MOTL Price Lists</b><br>
+                <a href="http://classic.magictraders.com/cgi-bin/query.cgi?list=magic&amp;field=0&amp;operator=re&amp;target=Serra Angel">Non-Foil</a> &middot; 
+                <a href="http://classic.magictraders.com/cgi-bin/query.cgi?list=magic-foils&amp;field=0&amp;operator=re&amp;target=Serra Angel">Foil</a> &middot; 
+                <a href="http://classic.magictraders.com/cgi-bin/query.cgi?list=magic-online&amp;field=0&amp;operator=re&amp;target=Serra Angel">MTGO</a><br><br>
+            <b>Print Proxies:</b><br><a href="/proxy?add=scans/en/m14/32&amp;n=1&amp;back=m14/en/32">[ +1 ]</a> <a href="/proxy?add=scans/en/m14/32&amp;n=2&amp;back=m14/en/32">[ +2 ]</a> <a href="/proxy?add=scans/en/m14/32&amp;n=3&amp;back=m14/en/32">[ +3 ]</a> <a href="/proxy?add=scans/en/m14/32&amp;n=4&amp;back=m14/en/32">[ +4 ]</a> </b> &middot; <a href="/proxy?back=m14/en/32">View</a> &middot; <a href="/proxy?clear=true&amp;back=m14/en/32">Clear</a><br><br>
+            
+            <b>HTML link to this card</b>:<br><input size="60" value="&lt;a href=&quot;http://magiccards.info/m14/en/32.html&quot;&gt;Serra Angel&lt;/a&gt;" onclick="this.select()"><br>
+            <b>BBCode link to this card</b>:<br><input size="60" value="[url=http://magiccards.info/m14/en/32.html]Serra Angel[/url]" onclick="this.select()">
+        </td>
+        <td valign="top" width="50%">
+            <script type="text/javascript" src="http://partner.tcgplayer.com/x3/mcpl.ashx?pk=MAGCINFO&amp;sid=69195"></script> 
+        </td>
+    </tr>
+</table>
+
+<hr />
+
+<br>
+<small style="color: #aaa;font-size: 0.6em;">
+  The information presented on this site about 
+  <b>Magic: The Gathering</b>, both literal and graphical, 
+  is copyrighted by Wizards of the Coast.<br>
+  This website is not produced, endorsed, supported, 
+  or affiliated with Wizards of the Coast.<!-- <br>
+  <i>Release “Giant Spider”, June 2012</i> --></small>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-74661-5']);
+    _gaq.push(['_setDomainName', '.magiccards.info'])
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+    })();
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  
+  <title>Serra Angel (Magic 2014 Core Set)</title>
+  <style type="text/css">
+   <!--
+    body {background: #fafafa url(http://magiccards.info/images/bg.gif) repeat-x;margin: 1em 1.5em;}
+    body,td,th {font: 0.9em/1.2em Verdana;color: #444;}
+    th {text-align: left; font-weight: bold;}
+    p {margin: 0.5em 0;}
+    a {color: #4666BC;}
+    a:hover {color: #333;background-color: #ff0;}
+    a:active {text-decoration: none;}
+    a:visited {color: #283C71;}
+    li.legal {color: #216728;}
+    li.restricted {color: #B98420;}
+    li.banned {color: #672121;}
+    li.reserve {color: #4F55CC;}
+    p.ctext {background-color: #fff;padding: 4px;}
+    p.otext {background-color: #fff;padding: 4px;}
+    div.oo {margin-left: 0em; padding: 0.5em 0 0 0; border: 1px solid #bbb; font-size: 75%;line-height: 100%;}
+    div.oo span {padding: 4px;}
+    div.oo p {margin: 0.5em 0 0 0;}
+    tr.odd {background-color: #e0e0e0;}
+    tr.even {background-color: #fafafa;}
+    #searchhelper td {line-height: 150%;vertical-align: middle;border-bottom: 1px dotted #999; padding: 5px 5px 5px 0;}
+    #searchhelper label {font-weight: bold;}
+    #searchhelper label.sl {font-weight: normal;}
+    #searchhelper table td {border: none; padding: 0; font-size: 1em;}
+    span.missing {color: #aaa;font-weight:bold;font-style:italic;}
+    dt {font-weight: bold; font-size: 110%; margin: 1em 0 0.5em 0;}
+    table#nav {font-size: 90%;}
+    ul {padding-left: 2em;}
+    .flag {vertical-align:-10%;}
+    .flag2 {vertical-align:-20%;}
+    .addition {color: red;}
+    a.ruleanchor {text-decoration: none; color: #E8DA58;}
+    li:target {background: #FAF7DC;}
+    -->
+  </style>
+  <script type="text/javascript">
+    <!--
+    function preventFocus() { isTop = false; }
+    function focusForm()    { if (isTop && document.f) { document.f.q.select(); } }
+    var isTop       = true;
+    window.onscroll = preventFocus;
+    window.onload   = focusForm;
+    // -->
+  </script>
+  <link rel="search" type="application/opensearchdescription+xml" title="MagicCards.Info" href="/opensearch.xml">
+</head>
+<body>
+<table width="100%" cellpadding="0" cellspacing="0" id="nav">
+    <tr>
+        <td>
+            <img src="http://magiccards.info/images/en.gif" alt="English" width="16" height="11" class="flag2">
+             <a href="/">Home</a>, 
+             <a href="/random.html">Random</a>, 
+             <a href="/art.html">Art Game</a>, 
+             <a href="/search.html"><b>Advanced</b></a>, 
+             <a href="/extras.html">Extras</a>, 
+             <a href="/rules.html">Rules</a>, 
+             <a href="/about.html">About</a>. 
+        </td>
+        <td align="right">
+            Sets: 
+            <a href="/ths/en.html">Theros</a>, <a href="/dgm/en.html">Dragon's Maze</a>, <a href="/m14/en.html">Magic 2014 Core Set</a>, <a href="/pd3/en.html">Graveborn</a>
+            &gt; <a href="/sitemap.html"><b>All Sets</b></a>
+        </td>
+    </tr>
+</table>
+<hr>
+<form method="GET" action="/query" style="font-size: 1.5em;" name="f">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center">
+  <tr>
+    <td nowrap="nowrap">
+        <label for="q">Query:</label> 
+        <input type="text" name="q" id="q" size="30" value="Serra Angel" style="font-size: 1em;" tabindex="1">
+        
+    </td>
+    <td align="right">
+      <select name="v" onchange="this.form.submit();">
+        <optgroup label="Select Output Format:">
+          
+          <option value="card" selected="selected">View as Cards with Scans</option>
+          <option value="olist">View as a List (Oracle)</option>
+          <option value="list">View as Checklist</option>
+          <option value="scan">View as Scans only</option>
+          <option value="spoiler">View as a Spoiler</option>
+        </optgroup>
+      </select>
+      <select name="s" onchange="this.form.submit();">
+        <optgroup label="Select Sort Order:">
+          
+          <option value="cname" selected="selected">Sort by Name &gt; Edition</option>
+          <option value="color">Sort by Color &gt; Name</option>
+          <option value="otype">Sort by Type &gt; Name</option>
+          <option value="cmc">Sort by Converted Mana Cost &gt; Name</option>
+          <option value="pow">Sort by Power &gt; Name</option>
+          <option value="tou">Sort by Toughness &gt; Name</option>
+          <option value="random">Sort by Random</option>
+          <option value="edition">Sort by Edition &gt; Name</option>
+          <option value="issue">Sort by Edition &gt; Collector's Number</option>
+        </optgroup>
+      </select>
+      <input type="submit" value="Search">
+    </td>
+  </tr>
+</table>
+</form>
+<hr>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+  <td align="left" width="35%">
+    
+    
+    &larr; <a href="/m14/en/31.html">Seraph of the Sword</a>
+    
+  </td>
+  <td align="center" width="30%">
+    <a href="/m14/en.html">Magic 2014 Core Set</a>
+  </td>
+  <td align="right" width="35%">
+    
+    
+    <a href="/m14/en/33.html">Show of Valor</a> &rarr;
+    
+  </td>
+</tr>
+</table>
+<hr />
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" style="margin: 0 0 0.5em 0;">
+  <tr>
+    <td width="312" valign="top">
+      <script type="text/javascript" src="http://partner.tcgplayer.com/x3/mchl.ashx?pk=MAGCINFO&amp;sid=69195"></script>
+      <img src="http://magiccards.info/scans/en/m14/32.jpg" 
+        alt="Serra Angel" width="312" height="445" style="border: 1px solid black;">
+    </td>
+    <td valign="top" style="padding: 0.5em;" width="70%">
+      <span style="font-size: 1.5em;">
+        <a href="/m14/en/32.html">Serra Angel</a>
+          <img src="http://magiccards.info/images/en.gif" alt="English"
+            width="16" height="11" class="flag">
+          
+      </span>
+      
+      
+        <p>Creature — Angel 4/4, 
+          3WW (5)
+          </p>
+        <p class="ctext"><b>Flying<br><br>Vigilance (Attacking doesn't cause this creature to tap.)</b></p>
+      
+
+      <p><i>Follow the light. In its absence, follow her.</i></p>
+      <p>Illus. Greg Staples</p>
+      <p><b>Gatherer Card Rulings<a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=370602">?</a>, Legality<a href="http://www.wizards.com/Magic/TCG/Resources.aspx?x=judge/resources/banned">?</a></b></p>
+      
+      <ul>
+        
+        
+        <li class="legal">Legal in Vintage (Type 1)</li>
+        
+        
+        <li class="legal">Legal in Legacy (Type 1.5)</li>
+        
+        <li class="legal">Legal in Extended (Type 1.X)</li>
+        
+        <li class="legal">Legal in Standard (Type 2)</li>
+        
+        
+        
+        
+        <li class="legal">Legal in Classic (MTGO)</li>
+        
+        <li class="legal">Legal in Commander</li>
+        
+        <li class="legal">Legal in Modern</li>
+        
+      </ul>
+    </td>
+    <td valign="top" style="padding: 0 0.5em;" width="30%">
+      <small>
+        
+        
+        
+        
+        <u><b>Printings:</b></u><br>
+        
+          
+            
+              <b>#32 (Greg Staples)</b><br>
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        <br><u><b>Editions:</b></u><br>
+        
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <b>Magic 2014 Core Set (Uncommon)</b><br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/m13/en/31.html">Magic 2013</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/m12/en/33.html">Magic 2012</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/cmd/en/30.html">Commander</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/m11/en/27.html">Magic 2011</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/m10/en/29.html">Magic 2010</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/dvd/en/10.html">Duel Decks: Divine vs. Demonic</a> (Rare)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/10e/en/39.html">Tenth Edition</a> (Rare)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/9e/en/43.html">Ninth Edition</a> (Rare)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/8e/en/45.html">Eighth Edition</a> (Rare)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/7e/en/42.html">Seventh Edition</a> (Rare)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/at/en/57.html">Anthologies</a> (Special)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/wotc/en/1.html">WotC Online Store</a> (Special)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/4e/en/300.html">Fourth Edition</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/rv/en/224.html">Revised Edition</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/cedi/en/225.html">International Collectors' Edition</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/ced/en/225.html">Collector's Edition</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/un/en/224.html">Unlimited Edition</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/be/en/225.html">Limited Edition Beta</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/al/en/223.html">Limited Edition Alpha</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/me4/en/25.html">MTGO Masters Edition IV</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        <br><u><b>Languages:</b></u><br>
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/de.gif" alt="German" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/de/32.html">Serra-Engel</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/fr.gif" alt="French" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/fr/32.html">Ange de Serra</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/it.gif" alt="Italian" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/it/32.html">Angelo di Serra</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/es.gif" alt="Spanish" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/es/32.html">Ángel de Serra</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/pt.gif" alt="Portuguese" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/pt/32.html">Anjo Serra</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/jp.gif" alt="Japanese" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/jp/32.html">セラの天使</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/cn.gif" alt="Simplified Chinese" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/cn/32.html">撒拉天使</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/ru.gif" alt="Russian" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/ru/32.html">Ангел Серры</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/tw.gif" alt="Traditional Chinese" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/tw/32.html">撒拉天使</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/ko.gif" alt="Korean" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/ko/32.html">세라 천사</a><br>
+              
+          
+        
+          
+        
+          
+        
+        
+
+        <br><br>
+        <a href="/query?q=%2B%2Bo%21%22Serra Angel%22&amp;v=olist">all prints in all languages</a>
+      </small>
+    </td>
+  </tr>
+</table>
+
+<hr />
+<table border="0" cellpadding="0" cellspacing="0" width="95%">
+    <tr>
+        <td valign="top" width="50%">
+            <b>Rules Questions / Links</b><br>
+                <a href="http://magic.tcgplayer.com/db/magic_single_card.asp?cn=Serra Angel&amp;partner=MAGCINFO">View All Prices for Serra Angel</a><br>
+                <a href="http://magic.tcgplayer.com/db/deck_search_result.asp?CardName=Serra Angel&amp;partner=MAGCINFO">View Decks with Serra Angel</a><br>
+                <a href="http://crystalkeep.com/cgi-bin/magicsearch.cgi?cardName=Serra Angel">Crystal Keep Rulings Summaries</a><br>
+                <a href="http://www.google.com/search?hl=en&amp;q=%22Serra Angel%22+site%3Amtgsalvation.com+inurl%3Acranial">Cranial Insertion (MTG Salvation)</a><br>
+                
+                <br>
+            <b>MOTL Price Lists</b><br>
+                <a href="http://classic.magictraders.com/cgi-bin/query.cgi?list=magic&amp;field=0&amp;operator=re&amp;target=Serra Angel">Non-Foil</a> &middot; 
+                <a href="http://classic.magictraders.com/cgi-bin/query.cgi?list=magic-foils&amp;field=0&amp;operator=re&amp;target=Serra Angel">Foil</a> &middot; 
+                <a href="http://classic.magictraders.com/cgi-bin/query.cgi?list=magic-online&amp;field=0&amp;operator=re&amp;target=Serra Angel">MTGO</a><br><br>
+            <b>Print Proxies:</b><br><a href="/proxy?add=scans/en/m14/32&amp;n=1&amp;back=m14/en/32">[ +1 ]</a> <a href="/proxy?add=scans/en/m14/32&amp;n=2&amp;back=m14/en/32">[ +2 ]</a> <a href="/proxy?add=scans/en/m14/32&amp;n=3&amp;back=m14/en/32">[ +3 ]</a> <a href="/proxy?add=scans/en/m14/32&amp;n=4&amp;back=m14/en/32">[ +4 ]</a> </b> &middot; <a href="/proxy?back=m14/en/32">View</a> &middot; <a href="/proxy?clear=true&amp;back=m14/en/32">Clear</a><br><br>
+            
+            <b>HTML link to this card</b>:<br><input size="60" value="&lt;a href=&quot;http://magiccards.info/m14/en/32.html&quot;&gt;Serra Angel&lt;/a&gt;" onclick="this.select()"><br>
+            <b>BBCode link to this card</b>:<br><input size="60" value="[url=http://magiccards.info/m14/en/32.html]Serra Angel[/url]" onclick="this.select()">
+        </td>
+        <td valign="top" width="50%">
+            <script type="text/javascript" src="http://partner.tcgplayer.com/x3/mcpl.ashx?pk=MAGCINFO&amp;sid=69195"></script> 
+        </td>
+    </tr>
+</table>
+
+<hr />
+
+<br>
+<small style="color: #aaa;font-size: 0.6em;">
+  The information presented on this site about 
+  <b>Magic: The Gathering</b>, both literal and graphical, 
+  is copyrighted by Wizards of the Coast.<br>
+  This website is not produced, endorsed, supported, 
+  or affiliated with Wizards of the Coast.<!-- <br>
+  <i>Release “Giant Spider”, June 2012</i> --></small>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-74661-5']);
+    _gaq.push(['_setDomainName', '.magiccards.info'])
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+    })();
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  
+  <title>Serra Angel (Magic 2014 Core Set)</title>
+  <style type="text/css">
+   <!--
+    body {background: #fafafa url(http://magiccards.info/images/bg.gif) repeat-x;margin: 1em 1.5em;}
+    body,td,th {font: 0.9em/1.2em Verdana;color: #444;}
+    th {text-align: left; font-weight: bold;}
+    p {margin: 0.5em 0;}
+    a {color: #4666BC;}
+    a:hover {color: #333;background-color: #ff0;}
+    a:active {text-decoration: none;}
+    a:visited {color: #283C71;}
+    li.legal {color: #216728;}
+    li.restricted {color: #B98420;}
+    li.banned {color: #672121;}
+    li.reserve {color: #4F55CC;}
+    p.ctext {background-color: #fff;padding: 4px;}
+    p.otext {background-color: #fff;padding: 4px;}
+    div.oo {margin-left: 0em; padding: 0.5em 0 0 0; border: 1px solid #bbb; font-size: 75%;line-height: 100%;}
+    div.oo span {padding: 4px;}
+    div.oo p {margin: 0.5em 0 0 0;}
+    tr.odd {background-color: #e0e0e0;}
+    tr.even {background-color: #fafafa;}
+    #searchhelper td {line-height: 150%;vertical-align: middle;border-bottom: 1px dotted #999; padding: 5px 5px 5px 0;}
+    #searchhelper label {font-weight: bold;}
+    #searchhelper label.sl {font-weight: normal;}
+    #searchhelper table td {border: none; padding: 0; font-size: 1em;}
+    span.missing {color: #aaa;font-weight:bold;font-style:italic;}
+    dt {font-weight: bold; font-size: 110%; margin: 1em 0 0.5em 0;}
+    table#nav {font-size: 90%;}
+    ul {padding-left: 2em;}
+    .flag {vertical-align:-10%;}
+    .flag2 {vertical-align:-20%;}
+    .addition {color: red;}
+    a.ruleanchor {text-decoration: none; color: #E8DA58;}
+    li:target {background: #FAF7DC;}
+    -->
+  </style>
+  <script type="text/javascript">
+    <!--
+    function preventFocus() { isTop = false; }
+    function focusForm()    { if (isTop && document.f) { document.f.q.select(); } }
+    var isTop       = true;
+    window.onscroll = preventFocus;
+    window.onload   = focusForm;
+    // -->
+  </script>
+  <link rel="search" type="application/opensearchdescription+xml" title="MagicCards.Info" href="/opensearch.xml">
+</head>
+<body>
+<table width="100%" cellpadding="0" cellspacing="0" id="nav">
+    <tr>
+        <td>
+            <img src="http://magiccards.info/images/en.gif" alt="English" width="16" height="11" class="flag2">
+             <a href="/">Home</a>, 
+             <a href="/random.html">Random</a>, 
+             <a href="/art.html">Art Game</a>, 
+             <a href="/search.html"><b>Advanced</b></a>, 
+             <a href="/extras.html">Extras</a>, 
+             <a href="/rules.html">Rules</a>, 
+             <a href="/about.html">About</a>. 
+        </td>
+        <td align="right">
+            Sets: 
+            <a href="/ths/en.html">Theros</a>, <a href="/dgm/en.html">Dragon's Maze</a>, <a href="/m14/en.html">Magic 2014 Core Set</a>, <a href="/pd3/en.html">Graveborn</a>
+            &gt; <a href="/sitemap.html"><b>All Sets</b></a>
+        </td>
+    </tr>
+</table>
+<hr>
+<form method="GET" action="/query" style="font-size: 1.5em;" name="f">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center">
+  <tr>
+    <td nowrap="nowrap">
+        <label for="q">Query:</label> 
+        <input type="text" name="q" id="q" size="30" value="Serra Angel" style="font-size: 1em;" tabindex="1">
+        
+    </td>
+    <td align="right">
+      <select name="v" onchange="this.form.submit();">
+        <optgroup label="Select Output Format:">
+          
+          <option value="card" selected="selected">View as Cards with Scans</option>
+          <option value="olist">View as a List (Oracle)</option>
+          <option value="list">View as Checklist</option>
+          <option value="scan">View as Scans only</option>
+          <option value="spoiler">View as a Spoiler</option>
+        </optgroup>
+      </select>
+      <select name="s" onchange="this.form.submit();">
+        <optgroup label="Select Sort Order:">
+          
+          <option value="cname" selected="selected">Sort by Name &gt; Edition</option>
+          <option value="color">Sort by Color &gt; Name</option>
+          <option value="otype">Sort by Type &gt; Name</option>
+          <option value="cmc">Sort by Converted Mana Cost &gt; Name</option>
+          <option value="pow">Sort by Power &gt; Name</option>
+          <option value="tou">Sort by Toughness &gt; Name</option>
+          <option value="random">Sort by Random</option>
+          <option value="edition">Sort by Edition &gt; Name</option>
+          <option value="issue">Sort by Edition &gt; Collector's Number</option>
+        </optgroup>
+      </select>
+      <input type="submit" value="Search">
+    </td>
+  </tr>
+</table>
+</form>
+<hr>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+  <td align="left" width="35%">
+    
+    
+    &larr; <a href="/m14/en/31.html">Seraph of the Sword</a>
+    
+  </td>
+  <td align="center" width="30%">
+    <a href="/m14/en.html">Magic 2014 Core Set</a>
+  </td>
+  <td align="right" width="35%">
+    
+    
+    <a href="/m14/en/33.html">Show of Valor</a> &rarr;
+    
+  </td>
+</tr>
+</table>
+<hr />
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" style="margin: 0 0 0.5em 0;">
+  <tr>
+    <td width="312" valign="top">
+      <script type="text/javascript" src="http://partner.tcgplayer.com/x3/mchl.ashx?pk=MAGCINFO&amp;sid=69195"></script>
+      <img src="http://magiccards.info/scans/en/m14/32.jpg" 
+        alt="Serra Angel" width="312" height="445" style="border: 1px solid black;">
+    </td>
+    <td valign="top" style="padding: 0.5em;" width="70%">
+      <span style="font-size: 1.5em;">
+        <a href="/m14/en/32.html">Serra Angel</a>
+          <img src="http://magiccards.info/images/en.gif" alt="English"
+            width="16" height="11" class="flag">
+          
+      </span>
+      
+      
+        <p>Creature — Angel 4/4, 
+          3WW (5)
+          </p>
+        <p class="ctext"><b>Flying<br><br>Vigilance (Attacking doesn't cause this creature to tap.)</b></p>
+      
+
+      <p><i>Follow the light. In its absence, follow her.</i></p>
+      <p>Illus. Greg Staples</p>
+      <p><b>Gatherer Card Rulings<a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=370602">?</a>, Legality<a href="http://www.wizards.com/Magic/TCG/Resources.aspx?x=judge/resources/banned">?</a></b></p>
+      
+      <ul>
+        
+        
+        <li class="legal">Legal in Vintage (Type 1)</li>
+        
+        
+        <li class="legal">Legal in Legacy (Type 1.5)</li>
+        
+        <li class="legal">Legal in Extended (Type 1.X)</li>
+        
+        <li class="legal">Legal in Standard (Type 2)</li>
+        
+        
+        
+        
+        <li class="legal">Legal in Classic (MTGO)</li>
+        
+        <li class="legal">Legal in Commander</li>
+        
+        <li class="legal">Legal in Modern</li>
+        
+      </ul>
+    </td>
+    <td valign="top" style="padding: 0 0.5em;" width="30%">
+      <small>
+        
+        
+        
+        
+        <u><b>Printings:</b></u><br>
+        
+          
+            
+              <b>#32 (Greg Staples)</b><br>
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        <br><u><b>Editions:</b></u><br>
+        
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <b>Magic 2014 Core Set (Uncommon)</b><br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/m13/en/31.html">Magic 2013</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/m12/en/33.html">Magic 2012</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/cmd/en/30.html">Commander</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/m11/en/27.html">Magic 2011</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/m10/en/29.html">Magic 2010</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/dvd/en/10.html">Duel Decks: Divine vs. Demonic</a> (Rare)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/10e/en/39.html">Tenth Edition</a> (Rare)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/9e/en/43.html">Ninth Edition</a> (Rare)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/8e/en/45.html">Eighth Edition</a> (Rare)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/7e/en/42.html">Seventh Edition</a> (Rare)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/at/en/57.html">Anthologies</a> (Special)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/wotc/en/1.html">WotC Online Store</a> (Special)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/4e/en/300.html">Fourth Edition</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/rv/en/224.html">Revised Edition</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/cedi/en/225.html">International Collectors' Edition</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/ced/en/225.html">Collector's Edition</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/un/en/224.html">Unlimited Edition</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/be/en/225.html">Limited Edition Beta</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/al/en/223.html">Limited Edition Alpha</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/me4/en/25.html">MTGO Masters Edition IV</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        <br><u><b>Languages:</b></u><br>
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/de.gif" alt="German" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/de/32.html">Serra-Engel</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/fr.gif" alt="French" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/fr/32.html">Ange de Serra</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/it.gif" alt="Italian" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/it/32.html">Angelo di Serra</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/es.gif" alt="Spanish" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/es/32.html">Ángel de Serra</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/pt.gif" alt="Portuguese" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/pt/32.html">Anjo Serra</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/jp.gif" alt="Japanese" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/jp/32.html">セラの天使</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/cn.gif" alt="Simplified Chinese" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/cn/32.html">撒拉天使</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/ru.gif" alt="Russian" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/ru/32.html">Ангел Серры</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/tw.gif" alt="Traditional Chinese" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/tw/32.html">撒拉天使</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/ko.gif" alt="Korean" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/ko/32.html">세라 천사</a><br>
+              
+          
+        
+          
+        
+          
+        
+        
+
+        <br><br>
+        <a href="/query?q=%2B%2Bo%21%22Serra Angel%22&amp;v=olist">all prints in all languages</a>
+      </small>
+    </td>
+  </tr>
+</table>
+
+<hr />
+<table border="0" cellpadding="0" cellspacing="0" width="95%">
+    <tr>
+        <td valign="top" width="50%">
+            <b>Rules Questions / Links</b><br>
+                <a href="http://magic.tcgplayer.com/db/magic_single_card.asp?cn=Serra Angel&amp;partner=MAGCINFO">View All Prices for Serra Angel</a><br>
+                <a href="http://magic.tcgplayer.com/db/deck_search_result.asp?CardName=Serra Angel&amp;partner=MAGCINFO">View Decks with Serra Angel</a><br>
+                <a href="http://crystalkeep.com/cgi-bin/magicsearch.cgi?cardName=Serra Angel">Crystal Keep Rulings Summaries</a><br>
+                <a href="http://www.google.com/search?hl=en&amp;q=%22Serra Angel%22+site%3Amtgsalvation.com+inurl%3Acranial">Cranial Insertion (MTG Salvation)</a><br>
+                
+                <br>
+            <b>MOTL Price Lists</b><br>
+                <a href="http://classic.magictraders.com/cgi-bin/query.cgi?list=magic&amp;field=0&amp;operator=re&amp;target=Serra Angel">Non-Foil</a> &middot; 
+                <a href="http://classic.magictraders.com/cgi-bin/query.cgi?list=magic-foils&amp;field=0&amp;operator=re&amp;target=Serra Angel">Foil</a> &middot; 
+                <a href="http://classic.magictraders.com/cgi-bin/query.cgi?list=magic-online&amp;field=0&amp;operator=re&amp;target=Serra Angel">MTGO</a><br><br>
+            <b>Print Proxies:</b><br><a href="/proxy?add=scans/en/m14/32&amp;n=1&amp;back=m14/en/32">[ +1 ]</a> <a href="/proxy?add=scans/en/m14/32&amp;n=2&amp;back=m14/en/32">[ +2 ]</a> <a href="/proxy?add=scans/en/m14/32&amp;n=3&amp;back=m14/en/32">[ +3 ]</a> <a href="/proxy?add=scans/en/m14/32&amp;n=4&amp;back=m14/en/32">[ +4 ]</a> </b> &middot; <a href="/proxy?back=m14/en/32">View</a> &middot; <a href="/proxy?clear=true&amp;back=m14/en/32">Clear</a><br><br>
+            
+            <b>HTML link to this card</b>:<br><input size="60" value="&lt;a href=&quot;http://magiccards.info/m14/en/32.html&quot;&gt;Serra Angel&lt;/a&gt;" onclick="this.select()"><br>
+            <b>BBCode link to this card</b>:<br><input size="60" value="[url=http://magiccards.info/m14/en/32.html]Serra Angel[/url]" onclick="this.select()">
+        </td>
+        <td valign="top" width="50%">
+            <script type="text/javascript" src="http://partner.tcgplayer.com/x3/mcpl.ashx?pk=MAGCINFO&amp;sid=69195"></script> 
+        </td>
+    </tr>
+</table>
+
+<hr />
+
+<br>
+<small style="color: #aaa;font-size: 0.6em;">
+  The information presented on this site about 
+  <b>Magic: The Gathering</b>, both literal and graphical, 
+  is copyrighted by Wizards of the Coast.<br>
+  This website is not produced, endorsed, supported, 
+  or affiliated with Wizards of the Coast.<!-- <br>
+  <i>Release “Giant Spider”, June 2012</i> --></small>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-74661-5']);
+    _gaq.push(['_setDomainName', '.magiccards.info'])
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+    })();
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  
+  <title>Serra Angel (Magic 2014 Core Set)</title>
+  <style type="text/css">
+   <!--
+    body {background: #fafafa url(http://magiccards.info/images/bg.gif) repeat-x;margin: 1em 1.5em;}
+    body,td,th {font: 0.9em/1.2em Verdana;color: #444;}
+    th {text-align: left; font-weight: bold;}
+    p {margin: 0.5em 0;}
+    a {color: #4666BC;}
+    a:hover {color: #333;background-color: #ff0;}
+    a:active {text-decoration: none;}
+    a:visited {color: #283C71;}
+    li.legal {color: #216728;}
+    li.restricted {color: #B98420;}
+    li.banned {color: #672121;}
+    li.reserve {color: #4F55CC;}
+    p.ctext {background-color: #fff;padding: 4px;}
+    p.otext {background-color: #fff;padding: 4px;}
+    div.oo {margin-left: 0em; padding: 0.5em 0 0 0; border: 1px solid #bbb; font-size: 75%;line-height: 100%;}
+    div.oo span {padding: 4px;}
+    div.oo p {margin: 0.5em 0 0 0;}
+    tr.odd {background-color: #e0e0e0;}
+    tr.even {background-color: #fafafa;}
+    #searchhelper td {line-height: 150%;vertical-align: middle;border-bottom: 1px dotted #999; padding: 5px 5px 5px 0;}
+    #searchhelper label {font-weight: bold;}
+    #searchhelper label.sl {font-weight: normal;}
+    #searchhelper table td {border: none; padding: 0; font-size: 1em;}
+    span.missing {color: #aaa;font-weight:bold;font-style:italic;}
+    dt {font-weight: bold; font-size: 110%; margin: 1em 0 0.5em 0;}
+    table#nav {font-size: 90%;}
+    ul {padding-left: 2em;}
+    .flag {vertical-align:-10%;}
+    .flag2 {vertical-align:-20%;}
+    .addition {color: red;}
+    a.ruleanchor {text-decoration: none; color: #E8DA58;}
+    li:target {background: #FAF7DC;}
+    -->
+  </style>
+  <script type="text/javascript">
+    <!--
+    function preventFocus() { isTop = false; }
+    function focusForm()    { if (isTop && document.f) { document.f.q.select(); } }
+    var isTop       = true;
+    window.onscroll = preventFocus;
+    window.onload   = focusForm;
+    // -->
+  </script>
+  <link rel="search" type="application/opensearchdescription+xml" title="MagicCards.Info" href="/opensearch.xml">
+</head>
+<body>
+<table width="100%" cellpadding="0" cellspacing="0" id="nav">
+    <tr>
+        <td>
+            <img src="http://magiccards.info/images/en.gif" alt="English" width="16" height="11" class="flag2">
+             <a href="/">Home</a>, 
+             <a href="/random.html">Random</a>, 
+             <a href="/art.html">Art Game</a>, 
+             <a href="/search.html"><b>Advanced</b></a>, 
+             <a href="/extras.html">Extras</a>, 
+             <a href="/rules.html">Rules</a>, 
+             <a href="/about.html">About</a>. 
+        </td>
+        <td align="right">
+            Sets: 
+            <a href="/ths/en.html">Theros</a>, <a href="/dgm/en.html">Dragon's Maze</a>, <a href="/m14/en.html">Magic 2014 Core Set</a>, <a href="/pd3/en.html">Graveborn</a>
+            &gt; <a href="/sitemap.html"><b>All Sets</b></a>
+        </td>
+    </tr>
+</table>
+<hr>
+<form method="GET" action="/query" style="font-size: 1.5em;" name="f">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center">
+  <tr>
+    <td nowrap="nowrap">
+        <label for="q">Query:</label> 
+        <input type="text" name="q" id="q" size="30" value="Serra Angel" style="font-size: 1em;" tabindex="1">
+        
+    </td>
+    <td align="right">
+      <select name="v" onchange="this.form.submit();">
+        <optgroup label="Select Output Format:">
+          
+          <option value="card" selected="selected">View as Cards with Scans</option>
+          <option value="olist">View as a List (Oracle)</option>
+          <option value="list">View as Checklist</option>
+          <option value="scan">View as Scans only</option>
+          <option value="spoiler">View as a Spoiler</option>
+        </optgroup>
+      </select>
+      <select name="s" onchange="this.form.submit();">
+        <optgroup label="Select Sort Order:">
+          
+          <option value="cname" selected="selected">Sort by Name &gt; Edition</option>
+          <option value="color">Sort by Color &gt; Name</option>
+          <option value="otype">Sort by Type &gt; Name</option>
+          <option value="cmc">Sort by Converted Mana Cost &gt; Name</option>
+          <option value="pow">Sort by Power &gt; Name</option>
+          <option value="tou">Sort by Toughness &gt; Name</option>
+          <option value="random">Sort by Random</option>
+          <option value="edition">Sort by Edition &gt; Name</option>
+          <option value="issue">Sort by Edition &gt; Collector's Number</option>
+        </optgroup>
+      </select>
+      <input type="submit" value="Search">
+    </td>
+  </tr>
+</table>
+</form>
+<hr>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+  <td align="left" width="35%">
+    
+    
+    &larr; <a href="/m14/en/31.html">Seraph of the Sword</a>
+    
+  </td>
+  <td align="center" width="30%">
+    <a href="/m14/en.html">Magic 2014 Core Set</a>
+  </td>
+  <td align="right" width="35%">
+    
+    
+    <a href="/m14/en/33.html">Show of Valor</a> &rarr;
+    
+  </td>
+</tr>
+</table>
+<hr />
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" style="margin: 0 0 0.5em 0;">
+  <tr>
+    <td width="312" valign="top">
+      <script type="text/javascript" src="http://partner.tcgplayer.com/x3/mchl.ashx?pk=MAGCINFO&amp;sid=69195"></script>
+      <img src="http://magiccards.info/scans/en/m14/32.jpg" 
+        alt="Serra Angel" width="312" height="445" style="border: 1px solid black;">
+    </td>
+    <td valign="top" style="padding: 0.5em;" width="70%">
+      <span style="font-size: 1.5em;">
+        <a href="/m14/en/32.html">Serra Angel</a>
+          <img src="http://magiccards.info/images/en.gif" alt="English"
+            width="16" height="11" class="flag">
+          
+      </span>
+      
+      
+        <p>Creature — Angel 4/4, 
+          3WW (5)
+          </p>
+        <p class="ctext"><b>Flying<br><br>Vigilance (Attacking doesn't cause this creature to tap.)</b></p>
+      
+
+      <p><i>Follow the light. In its absence, follow her.</i></p>
+      <p>Illus. Greg Staples</p>
+      <p><b>Gatherer Card Rulings<a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=370602">?</a>, Legality<a href="http://www.wizards.com/Magic/TCG/Resources.aspx?x=judge/resources/banned">?</a></b></p>
+      
+      <ul>
+        
+        
+        <li class="legal">Legal in Vintage (Type 1)</li>
+        
+        
+        <li class="legal">Legal in Legacy (Type 1.5)</li>
+        
+        <li class="legal">Legal in Extended (Type 1.X)</li>
+        
+        <li class="legal">Legal in Standard (Type 2)</li>
+        
+        
+        
+        
+        <li class="legal">Legal in Classic (MTGO)</li>
+        
+        <li class="legal">Legal in Commander</li>
+        
+        <li class="legal">Legal in Modern</li>
+        
+      </ul>
+    </td>
+    <td valign="top" style="padding: 0 0.5em;" width="30%">
+      <small>
+        
+        
+        
+        
+        <u><b>Printings:</b></u><br>
+        
+          
+            
+              <b>#32 (Greg Staples)</b><br>
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        <br><u><b>Editions:</b></u><br>
+        
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <b>Magic 2014 Core Set (Uncommon)</b><br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/m13/en/31.html">Magic 2013</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/m12/en/33.html">Magic 2012</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/cmd/en/30.html">Commander</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/m11/en/27.html">Magic 2011</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/m10/en/29.html">Magic 2010</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/dvd/en/10.html">Duel Decks: Divine vs. Demonic</a> (Rare)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/10e/en/39.html">Tenth Edition</a> (Rare)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/9e/en/43.html">Ninth Edition</a> (Rare)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/8e/en/45.html">Eighth Edition</a> (Rare)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/7e/en/42.html">Seventh Edition</a> (Rare)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/at/en/57.html">Anthologies</a> (Special)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/wotc/en/1.html">WotC Online Store</a> (Special)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/4e/en/300.html">Fourth Edition</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/rv/en/224.html">Revised Edition</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/cedi/en/225.html">International Collectors' Edition</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/ced/en/225.html">Collector's Edition</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/un/en/224.html">Unlimited Edition</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/be/en/225.html">Limited Edition Beta</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/al/en/223.html">Limited Edition Alpha</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+            <img src="http://magiccards.info/images/en.gif" alt="English" 
+              width="16" height="11" class="flag2"> 
+            
+              <a href="/me4/en/25.html">MTGO Masters Edition IV</a> (Uncommon)<br>
+            
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        <br><u><b>Languages:</b></u><br>
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/de.gif" alt="German" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/de/32.html">Serra-Engel</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/fr.gif" alt="French" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/fr/32.html">Ange de Serra</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/it.gif" alt="Italian" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/it/32.html">Angelo di Serra</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/es.gif" alt="Spanish" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/es/32.html">Ángel de Serra</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/pt.gif" alt="Portuguese" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/pt/32.html">Anjo Serra</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/jp.gif" alt="Japanese" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/jp/32.html">セラの天使</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/cn.gif" alt="Simplified Chinese" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/cn/32.html">撒拉天使</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/ru.gif" alt="Russian" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/ru/32.html">Ангел Серры</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/tw.gif" alt="Traditional Chinese" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/tw/32.html">撒拉天使</a><br>
+              
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <img src="http://magiccards.info/images/ko.gif" alt="Korean" 
+              width="16" height="11" class="flag2"> 
+              <a href="/m14/ko/32.html">세라 천사</a><br>
+              
+          
+        
+          
+        
+          
+        
+        
+
+        <br><br>
+        <a href="/query?q=%2B%2Bo%21%22Serra Angel%22&amp;v=olist">all prints in all languages</a>
+      </small>
+    </td>
+  </tr>
+</table>
+
+<hr />
+<table border="0" cellpadding="0" cellspacing="0" width="95%">
+    <tr>
+        <td valign="top" width="50%">
+            <b>Rules Questions / Links</b><br>
+                <a href="http://magic.tcgplayer.com/db/magic_single_card.asp?cn=Serra Angel&amp;partner=MAGCINFO">View All Prices for Serra Angel</a><br>
+                <a href="http://magic.tcgplayer.com/db/deck_search_result.asp?CardName=Serra Angel&amp;partner=MAGCINFO">View Decks with Serra Angel</a><br>
+                <a href="http://crystalkeep.com/cgi-bin/magicsearch.cgi?cardName=Serra Angel">Crystal Keep Rulings Summaries</a><br>
+                <a href="http://www.google.com/search?hl=en&amp;q=%22Serra Angel%22+site%3Amtgsalvation.com+inurl%3Acranial">Cranial Insertion (MTG Salvation)</a><br>
+                
+                <br>
+            <b>MOTL Price Lists</b><br>
+                <a href="http://classic.magictraders.com/cgi-bin/query.cgi?list=magic&amp;field=0&amp;operator=re&amp;target=Serra Angel">Non-Foil</a> &middot; 
+                <a href="http://classic.magictraders.com/cgi-bin/query.cgi?list=magic-foils&amp;field=0&amp;operator=re&amp;target=Serra Angel">Foil</a> &middot; 
+                <a href="http://classic.magictraders.com/cgi-bin/query.cgi?list=magic-online&amp;field=0&amp;operator=re&amp;target=Serra Angel">MTGO</a><br><br>
+            <b>Print Proxies:</b><br><a href="/proxy?add=scans/en/m14/32&amp;n=1&amp;back=m14/en/32">[ +1 ]</a> <a href="/proxy?add=scans/en/m14/32&amp;n=2&amp;back=m14/en/32">[ +2 ]</a> <a href="/proxy?add=scans/en/m14/32&amp;n=3&amp;back=m14/en/32">[ +3 ]</a> <a href="/proxy?add=scans/en/m14/32&amp;n=4&amp;back=m14/en/32">[ +4 ]</a> </b> &middot; <a href="/proxy?back=m14/en/32">View</a> &middot; <a href="/proxy?clear=true&amp;back=m14/en/32">Clear</a><br><br>
+            
+            <b>HTML link to this card</b>:<br><input size="60" value="&lt;a href=&quot;http://magiccards.info/m14/en/32.html&quot;&gt;Serra Angel&lt;/a&gt;" onclick="this.select()"><br>
+            <b>BBCode link to this card</b>:<br><input size="60" value="[url=http://magiccards.info/m14/en/32.html]Serra Angel[/url]" onclick="this.select()">
+        </td>
+        <td valign="top" width="50%">
+            <script type="text/javascript" src="http://partner.tcgplayer.com/x3/mcpl.ashx?pk=MAGCINFO&amp;sid=69195"></script> 
+        </td>
+    </tr>
+</table>
+
+<hr />
+
+<br>
+<small style="color: #aaa;font-size: 0.6em;">
+  The information presented on this site about 
+  <b>Magic: The Gathering</b>, both literal and graphical, 
+  is copyrighted by Wizards of the Coast.<br>
+  This website is not produced, endorsed, supported, 
+  or affiliated with Wizards of the Coast.<!-- <br>
+  <i>Release “Giant Spider”, June 2012</i> --></small>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-74661-5']);
+    _gaq.push(['_setDomainName', '.magiccards.info'])
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+    })();
+  </script>
+</body>
+</html>
+
+null
+null
+null

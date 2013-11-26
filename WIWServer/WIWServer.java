@@ -6,10 +6,9 @@ import java.net.*;
 import java.io.*;
 import java.util.*;
 import java.text.*;
-
-//Temporary imports?
 import java.awt.image.*;
 import javax.imageio.*;
+import org.apache.commons.codec.binary.Base64;
 
 
 public class WIWServer
@@ -203,33 +202,60 @@ public class WIWServer
 
 				DataInputStream dis = new DataInputStream(in);
 				String[] objectData = dis.readUTF().split(";");
-				System.err.println("\t--Received: " + objectData[1] + " of type " + objectData[0]);
+				System.err.print("\t-> Received: " + objectData[1] + " of type ");
 				itemCache DBRequest = new itemCache("192.168.1.12", 3306, "root", "kpcofgs");
 				Type objectType = null;
 				if(objectData[0].equalsIgnoreCase("C"))
 				{
 					objectType = Type.Card;
+					System.err.println("CARD...");
 				}
 				else if(objectData[0].equalsIgnoreCase("M"))
 				{
 					objectType = Type.Currency;
+					System.err.println("CURRENCY...");
 				}
 				else if(objectData[0].equalsIgnoreCase("S"))
 				{
 					objectType = Type.Stamp;
+					System.err.println("STAMP...");
 				}
 
 				String result = "";
+				System.err.println("\t-> Returning: (L/M/H)");
 
 				for(String s : (DBRequest.getPrice(objectType, objectData[1])))
 				{
+					System.err.println("\t\t" + s);
 					result += s + ";";
 				}
 				
-				System.err.println("\t--Returning: " + result);
-				PrintWriter writer = new PrintWriter(out);
-				writer.println(result.substring(0, result.length()-1));
-				writer.flush();
+				//Send price graph if object is card:
+				if(objectType == Type.Card)
+				{
+					try
+					{
+						File f = new File("price_graphs/" + objectData[1] + ".png");
+						System.err.println("\t-> Converting " + f.toString() + " for sending..."); 
+						FileInputStream fis  = new FileInputStream(f);
+						byte[] image_data = new byte[(int) f.length()];
+						fis.read(image_data);
+						String dataString = Base64.encodeBase64String(image_data);
+						result += dataString;
+					}
+					catch(Exception e)
+					{
+						e.printStackTrace();
+					}
+				}
+
+				System.err.println("\t-> Sending data to client...");
+				DataOutputStream dos = new DataOutputStream(out);
+				//PrintWriter writer = new PrintWriter(out);
+				//writer.println(result);
+				//writer.flush();
+				dos.writeUTF(result);
+				System.err.println("\t-> Data transfer complete (" + result.length() / 1000.0 + ") kb.");
 
 
 				if(WIWConstants.DO_PING)

@@ -5,10 +5,8 @@ import java.net.*;
 import java.io.*;
 import java.util.*;
 import java.text.*;
-import java.text.Format.*;
-import javax.imageio.*;
 import java.awt.*;
-import java.awt.image.*;
+import java.text.Format.*;
 import com.xeiam.xchart.*;
 import com.xeiam.xchart.StyleManager.*;
 
@@ -26,75 +24,15 @@ public class MTGStockScraper
     weboshi.getPriceHistory(args[0]);
     
   }
-  
-  /*public String[][] getPriceHistory(String cardName)
-   {
-   String[][] priceHistory = new String[10][4];
-   int curr_row = 0;
-   
-   try
-   {
-   URL url = new URL(MTG_DB_URL + cardName);
-   URLConnection conn = url.openConnection();
-   String line = "";
-   BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-   while((line = in.readLine()) != null)
-   {
-   if(line.equals("<table class='table center-table table-condensed'>"))
-   {
-   //Skip ahead to first relevant row (ignore column headers)
-   in.readLine();
-   while(!line.equals("<tr>"))
-   {
-   line = in.readLine();
-   }
-   //End skip
-   
-   while(!line.equals("</table>"))
-   {
-   while(!line.contains(DATE_HDR))
-   {
-   line = in.readLine();
-   }
-   
-   priceHistory[curr_row][0] = line.substring(line.indexOf(DATE_HDR)+DATE_HDR.length()+1,line.indexOf("</td>"));
-   
-   while(!line.contains(LOW_HDR))
-   {
-   line = in.readLine();
-   }
-   
-   priceHistory[curr_row][1] = line.substring(line.indexOf(LOW_HDR)+LOW_HDR.length()+1,line.indexOf("</td>"));
-   
-   while(!line.contains(MED_HDR))
-   {
-   line = in.readLine();
-   }
-   
-   priceHistory[curr_row][2] = line.substring(line.indexOf(MED_HDR)+MED_HDR.length()+1,line.indexOf("</td>"));
-   
-   while(!line.contains(HIGH_HDR))
-   {
-   line = in.readLine();
-   }
-   
-   priceHistory[curr_row][3] = line.substring(line.indexOf(HIGH_HDR)+HIGH_HDR.length()+1,line.indexOf("</td>"));
-   
-   curr_row++;
-   }
-   }
-   }
-   }
-   catch(Exception e)
-   {}
-   
-   return priceHistory;
-   }*/
-  
-  public void getPriceHistory(String cardName)
+    
+  public String getPriceHistory(String cardName)
   {
     Chart chart = new ChartBuilder().width(800).height(600).theme(ChartTheme.Matlab).title(cardName + " Price History").xAxisTitle("Date").yAxisTitle("Price").build();
     chart.getStyleManager().setPlotGridLinesVisible(true);
+    chart.getStyleManager().setLegendVisible(false);
+    chart.getStyleManager().setChartTitleVisible(false);
+    chart.getStyleManager().setAxisTitlesVisible(false);
+    chart.getStyleManager().setAxisTickLabelsFont(new Font(Font.SANS_SERIF, Font.BOLD, 20));
     Collection<Date> xData = new ArrayList<Date>();
     Collection<Number> lowData = new ArrayList<Number>();
     Collection<Number> medData = new ArrayList<Number>();
@@ -161,7 +99,8 @@ public class MTGStockScraper
               line = in.readLine();
             }
             
-            highData.add(Double.parseDouble(line.substring(line.indexOf(HIGH_HDR)+HIGH_HDR.length()+2,line.indexOf("</td>"))));
+	    Double d = (Double.parseDouble(line.substring(line.indexOf(HIGH_HDR)+HIGH_HDR.length()+1,line.indexOf("</td>"))));
+	    highData.add(d);
             
           }
           
@@ -170,20 +109,27 @@ public class MTGStockScraper
       }
       
       Series lowSeries = chart.addDateSeries("Low Price", xData, lowData);
-      lowSeries.setLineStyle(SeriesLineStyle.DOT_DOT);
+      lowSeries.setLineStyle(new BasicStroke(13));
+      lowSeries.setLineColor(SeriesColor.RED);
       Series medSeries = chart.addDateSeries("Medium Price", xData, medData);
-      medSeries.setLineStyle(SeriesLineStyle.DOT_DOT);
+      medSeries.setLineStyle(SeriesLineStyle.SOLID);
+      medSeries.setLineStyle(new BasicStroke(13));
+      medSeries.setLineColor(SeriesColor.BLUE);
       Series highSeries = chart.addDateSeries("High Price", xData, highData);
-      highSeries.setLineStyle(SeriesLineStyle.DOT_DOT);
-      //new SwingWrapper(chart).displayChart();
-      BitmapEncoder.savePNG(chart, cardName + ".png");
-      
-   
+      highSeries.setLineStyle(SeriesLineStyle.SOLID);
+      highSeries.setLineStyle(new BasicStroke(13));
+      highSeries.setLineColor(SeriesColor.GREEN);
+      String filePath = "price_graphs/" + cardName + ".png";
+      BitmapEncoder.savePNG(chart, filePath);
+      return filePath;
+
     }
     catch(Exception e)
     {
       e.printStackTrace();
     }
+
+    return null;
   }
   
   
