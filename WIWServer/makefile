@@ -13,7 +13,8 @@ CLASSES = \
 	  TCGScraper.java \
 	  Type.java \
 	  WIWConstants.java \
-	  WIWServer.java
+	  WIWServer.java \
+	  ItemServer.java
 
 default: classes
 classes: $(CLASSES:.java=.class)
