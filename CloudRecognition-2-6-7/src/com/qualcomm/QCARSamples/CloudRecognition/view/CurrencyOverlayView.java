@@ -34,12 +34,12 @@ public class CurrencyOverlayView extends RelativeLayout
 	
     /** Inflates the Custom View Layout */
     private void inflateLayout(Context context)
-    {
-
+    {	
         final LayoutInflater inflater = LayoutInflater.from(context);
 
         // Generates the layout for the view
-        inflater.inflate(R.layout.bitmap_layout, this, true);
+        inflater.inflate(R.layout.bitmap_layout_currency, this, true);
+
     }
 
     /** Sets Currency Name in View */
