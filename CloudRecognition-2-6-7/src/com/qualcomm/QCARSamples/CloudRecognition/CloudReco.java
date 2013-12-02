@@ -675,6 +675,11 @@ public class CloudReco extends Activity
     {
         DebugLog.LOGD("CloudReco::onPause");
         super.onPause();
+        
+        if(jazz.isPlaying())
+        {
+        	jazz.stop();
+        }
 
         // Pauses the OpenGLView
         if (mGlView != null)
@@ -1209,16 +1214,17 @@ public class CloudReco extends Activity
         //Breaks input into identifier and name
         String[] in = aItemJSONUrl.split(";");
         
-        if(in[0].equals("c"))
+        
+        if(in[0].equals("m"))
+        {
+        	mCurrencyData = new Currency();
+        	mCurrencyData.setName(in[1]);  
+        }
+        else
         {
 	        //Initialize Card with name
 	        mCardData = new Card();
 	        mCardData.setName(in[1]);
-        }
-        else if(in[0].equals("m"))
-        {
-        	mCurrencyData = new Currency();
-        	mCurrencyData.setName(in[1]);  
         }
         
         //Task to get prices and graph
@@ -1259,7 +1265,21 @@ public class CloudReco extends Activity
 			String tmpInput = in.readUTF();
 			String[] resultStrings = tmpInput.split(";");			
 			
-			if(tmpOutput[0].equals("c"))
+			
+			if(tmpOutput[0].equals("m"))
+			{
+				mCurrencyData.setPrice(resultStrings[0]);
+				byte[] resultBitmapBuffer = Base64.decode(resultStrings[3], 0);
+				mCurrencyData.setGraph(BitmapFactory.decodeByteArray(resultBitmapBuffer, 0, resultBitmapBuffer.length));
+				
+				CRhistoryList.add(new HistoryListItem(mCurrencyData.getName(), "m", mCurrencyData.getPrice())); 
+				if(CRhistoryList.isEmpty())
+	            {
+	            	Log.d("ListTest","CRhistoryList is empty");
+	            }
+			}
+			
+			else
 			{
 				//Set Prices and Graph into Card
 				mCardData.setPriceLow(resultStrings[0]);	
@@ -1269,13 +1289,12 @@ public class CloudReco extends Activity
 	            mCardData.setGraph(BitmapFactory.decodeByteArray(resultBitmapBuffer, 0, resultBitmapBuffer.length));
 	            
 	            /*Create History List Object*/
-	            CRhistoryList.add(new HistoryListItem(mCardData.getName(), "c", mCardData.getPriceLow(), mCardData.getPriceMed(), mCardData.getPriceHi()));
-	            
-	            
-			}
-			else if(tmpOutput[0].equals("m"))
-			{
-				mCurrencyData.setPrice(resultStrings[0]);
+	            CRhistoryList.add(new HistoryListItem(mCardData.getName(), "c", mCardData.getPriceLow(), mCardData.getPriceMed(), mCardData.getPriceHi()));    
+	            if(CRhistoryList.isEmpty())
+	            {
+	            	Log.d("ListTest","CRhistoryList is empty");
+	            }
+			
 			}
 			
 			in.close();
@@ -1294,6 +1313,7 @@ public class CloudReco extends Activity
             mIsLoadingBookData = true;
         }
 
+        
         protected void onProgressUpdate(Void... values)
         {
         }
@@ -1461,6 +1481,7 @@ public class CloudReco extends Activity
     {
     	productView.setCurrencyName(currency.getName());
     	productView.setCurrencyPrice(currency.getPrice());
+    	productView.setCurrencyGraphImage(currency.getGraph());
     }
 
 
@@ -1542,8 +1563,9 @@ public class CloudReco extends Activity
     {
         if (keyCode == KeyEvent.KEYCODE_MENU)
         {
-            Intent i = new Intent(CloudReco.this, HistoryListActivity.class);
-            i.putParcelableArrayListExtra("historyList", CRhistoryList);
+            Intent i = new Intent(this, HistoryListActivity.class);
+            Log.d("ListTest", CRhistoryList.size() + "");
+            i.putExtra("historyList", CRhistoryList);
             startActivity(i);
             return true;
         }

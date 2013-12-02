@@ -56,5 +56,16 @@ public class CurrencyOverlayView extends RelativeLayout
     	TextView tv = (TextView) findViewById(R.id.currency_price);
         tv.setText(CurrencyPrice);
     }
+    
+    /** Sets Graph Image in View */
+    public void setCurrencyGraphImage(Bitmap graphImage)
+    {
+    	if(graphImage != null)
+    	{
+    		ImageView iv = (ImageView) findViewById(R.id.graph_currency);
+    		iv.setImageBitmap(graphImage);
+    	}
+    }
+    
 
 }

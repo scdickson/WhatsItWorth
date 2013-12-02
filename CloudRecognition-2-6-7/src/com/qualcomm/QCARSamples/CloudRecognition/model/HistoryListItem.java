@@ -1,9 +1,11 @@
 package com.qualcomm.QCARSamples.CloudRecognition.model;
 
+import java.io.Serializable;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class HistoryListItem implements Parcelable{
+public class HistoryListItem implements Serializable{
 	private String name;
 	private String type;
 	private String lowPrice;
@@ -14,7 +16,21 @@ public class HistoryListItem implements Parcelable{
 	private double medium;
 	private double high;
 	
-
+	
+	public HistoryListItem(String name, String type, String medPrice)
+	{
+		this.name = name;
+		this.type = type;
+		this.medPrice = medPrice;
+		this.medium = Double.parseDouble(medPrice.substring(medPrice.indexOf("$")+1));
+		
+		this.low = 0;
+		this.lowPrice = null;
+		this.high = 0;
+		this.highPrice = null;
+		
+	}
+	
 	public HistoryListItem(String name, String type, String lowPrice, String medPrice, String highPrice)
 	{
 		this.name = name;
@@ -22,9 +38,9 @@ public class HistoryListItem implements Parcelable{
 		this.lowPrice = lowPrice;
 		this.medPrice = medPrice;
 		this.highPrice = highPrice;
-		this.low = Double.parseDouble(lowPrice);
-		this.medium = Double.parseDouble(medPrice);
-		this.high = Double.parseDouble(highPrice);
+		this.low = Double.parseDouble(lowPrice.substring(lowPrice.indexOf("$")+1));
+		this.medium = Double.parseDouble(medPrice.substring(medPrice.indexOf("$")+1));
+		this.high = Double.parseDouble(highPrice.substring(highPrice.indexOf("$")+1));
 	
 	}
 	public String getName()
@@ -62,14 +78,5 @@ public class HistoryListItem implements Parcelable{
 	{	
 		return this.highPrice;
 	}
-	@Override
-	public int describeContents() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	@Override
-	public void writeToParcel(Parcel arg0, int arg1) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }
