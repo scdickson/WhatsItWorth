@@ -39,6 +39,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -73,6 +74,9 @@ public class CloudReco extends Activity
 {
     // Defines the Server URL to get the books data
     private static final String mServerURL = "https://s3.amazonaws.com/blobgame/";
+    MediaPlayer jazz;
+    MediaPlayer mp;
+    int length = 0;
 
     // Different screen orientations supported by the CloudReco system.
     public static final int SCREEN_ORIENTATION_LANDSCAPE = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
@@ -605,6 +609,9 @@ public class CloudReco extends Activity
     {
         DebugLog.LOGD("CloudReco::onResume");
         super.onResume();
+        jazz = MediaPlayer.create(getApplicationContext(), R.raw.jaz);
+        jazz.setLooping(true);
+        jazz.start();
 
         // QCAR-specific resume operation
         QCAR.onResume();
@@ -1221,9 +1228,11 @@ public class CloudReco extends Activity
     private class PullItemData extends AsyncTask<String, Void, String[]>
     {
     	private int port = 9998;
-    	private String address = "98.226.145.27"; 
+    	private String address = "98.226.145.27";
 
-		protected String[] doInBackground(String... params) {
+		protected String[] doInBackground(String... params)
+        {
+
 		//Split for switch
 		String[] tmpOutput = params[0].split(";");
 			
@@ -1280,6 +1289,23 @@ public class CloudReco extends Activity
             if (mCardData != null || mCurrencyData != null)
             {
             	RelativeLayout productView = null;
+
+                if(jazz.isPlaying())
+                {
+                    jazz.pause();
+                    length = jazz.getCurrentPosition();
+                }
+
+                mp = MediaPlayer.create(getApplicationContext(), R.raw.cedric);
+                mp.start();
+                mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        jazz.seekTo(length);
+                        jazz.start();
+                    }
+                });
+
                 
             	if(result[0].equals("c"))
             	{
@@ -1294,7 +1320,7 @@ public class CloudReco extends Activity
             	{
             		productView = new CurrencyOverlayView(
             				CloudReco.this);
-            		updateCurrencyView((CurrencyOverlayView)productView, mCurrencyData);
+            		updateCurrencyView((CurrencyOverlayView) productView, mCurrencyData);
             	}
                 // Sets the layout params
                 productView.setLayoutParams(new LayoutParams(
