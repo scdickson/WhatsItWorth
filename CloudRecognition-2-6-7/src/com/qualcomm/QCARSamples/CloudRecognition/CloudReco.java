@@ -25,6 +25,7 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 import org.apache.http.util.ByteArrayBuffer;
@@ -33,6 +34,7 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
@@ -64,14 +66,18 @@ import android.widget.Toast;
 import com.qualcomm.QCAR.QCAR;
 import com.qualcomm.QCARSamples.CloudRecognition.model.Card;
 import com.qualcomm.QCARSamples.CloudRecognition.model.Currency;
+import com.qualcomm.QCARSamples.CloudRecognition.model.HistoryListItem;
 import com.qualcomm.QCARSamples.CloudRecognition.utils.DebugLog;
 import com.qualcomm.QCARSamples.CloudRecognition.view.CardOverlayView;
 import com.qualcomm.QCARSamples.CloudRecognition.view.CurrencyOverlayView;
+import com.qualcomm.QCARSamples.CloudRecognition.view.HistoryListActivity;
 
 
 /** The main activity for the CloudReco sample. */
 public class CloudReco extends Activity
 {
+	ArrayList<HistoryListItem> CRhistoryList;
+	
     // Defines the Server URL to get the books data
     private static final String mServerURL = "https://s3.amazonaws.com/blobgame/";
     MediaPlayer jazz;
@@ -578,7 +584,8 @@ public class CloudReco extends Activity
     {
         DebugLog.LOGD("CloudReco::onCreate");
         super.onCreate(savedInstanceState);
-
+        CRhistoryList = new ArrayList<HistoryListItem>();
+        
         // Query the QCAR initialization flags:
         mQCARFlags = getInitializationFlags();
 
@@ -594,6 +601,8 @@ public class CloudReco extends Activity
 
         // Sets the device scale density to the native code
         setDeviceDPIScaleFactor(dpiScaleIndicator);
+        
+        
     }
 
 
@@ -1258,6 +1267,11 @@ public class CloudReco extends Activity
 	            mCardData.setPriceHi(resultStrings[2]);          
 	            byte[] resultBitmapBuffer = Base64.decode(resultStrings[3], 0);
 	            mCardData.setGraph(BitmapFactory.decodeByteArray(resultBitmapBuffer, 0, resultBitmapBuffer.length));
+	            
+	            /*Create History List Object*/
+	            CRhistoryList.add(new HistoryListItem(mCardData.getName(), "c", mCardData.getPriceLow(), mCardData.getPriceMed(), mCardData.getPriceHi()));
+	            
+	            
 			}
 			else if(tmpOutput[0].equals("m"))
 			{
@@ -1429,6 +1443,8 @@ public class CloudReco extends Activity
         return mItemDataTexture;
     }
 
+    
+    
 
     /** Updates a CardOverlayView with the Card data specified in parameters */
     private void updateCardView(CardOverlayView productView, Card card)
@@ -1521,15 +1537,18 @@ public class CloudReco extends Activity
 
 
     /** Shows the Camera Options Dialog when the Menu Key is pressed */
-    public boolean onKeyUp(int keyCode, KeyEvent event)
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
     {
         if (keyCode == KeyEvent.KEYCODE_MENU)
         {
-            showCameraOptionsDialog();
+            Intent i = new Intent(CloudReco.this, HistoryListActivity.class);
+            i.putParcelableArrayListExtra("historyList", CRhistoryList);
+            startActivity(i);
             return true;
         }
 
-        return super.onKeyUp(keyCode, event);
+        return super.onKeyDown(keyCode, event);
     }
 
 
