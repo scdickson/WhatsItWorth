@@ -9,7 +9,7 @@ public class CurrencyConverter
 {
   public static final String API_KEY = "7e3cbe6fd3fdb0da134f8a215c9e6b6e5b5016ae";
   public static final String API_URL = "http://currency-api.appspot.com/api/";
-  public static final String[] SUPPORTED_CURRENCY = {"AUD","CAD","CHF","DKK","EUR","GBP","HKD","JPY","MXN","NZD","PHP","SEK","SGD","THB","USD","ZAR"};
+  public static final String[] SUPPORTED_CURRENCY = {"AUD","CAD","CHF","DKK","EUR","GBP","HKD","JPY","MXN","NZD","PHP","SEK","SGD","THB","USD","ZAR", "CNY"};
   
   public double convert(String source, String target, double amount)
   {
@@ -36,6 +36,11 @@ public class CurrencyConverter
       }
     }
     
+    if(source.equals("CNY"))
+    {
+	    return amount * 0.16;
+    }
+
     if(source_ok && target_ok && amount >= 0)
     {
       try

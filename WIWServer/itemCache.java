@@ -20,12 +20,12 @@ public class itemCache
     Type curr;
     curr = Type.Currency;
     
-    //db.insertObject(mtgCard, "Pack Rat");
+    db.insertObject(curr, "CNY_1");
     
-    String[] prices = db.getPrice(mtgCard, "Staff of the Death Magus");
-    System.out.println("low: " + prices[0]);
-    System.out.println("median: " + prices[1]);
-    System.out.println("high: " + prices[2]);
+    //String[] prices = db.getPrice(mtgCard, "Staff of the Death Magus");
+    //System.out.println("low: " + prices[0]);
+    //System.out.println("median: " + prices[1]);
+    //System.out.println("high: " + prices[2]);
   }
   
   public itemCache(String url, int port, String username, String password)
@@ -36,7 +36,7 @@ public class itemCache
    results = new ArrayList<String>();
   }
   
-  private void insertObject(Type objectType, String name)
+  public void insertObject(Type objectType, String name)
   {
     
     name = name.replace("'","\\'");
@@ -78,7 +78,8 @@ public class itemCache
 	double currAmount = Double.parseDouble(parsed);
 	name = name.substring(0, 3);
 	double convertedAmount = cc.convert(name, "USD", currAmount);
-	parsed = String.valueOf(convertedAmount);
+	DecimalFormat df = new DecimalFormat("#.##");
+	parsed = "$" + String.valueOf(df.format(convertedAmount));
 	prices[0] = parsed;
 	prices[1] = parsed;
 	prices[2] = parsed;
@@ -158,8 +159,15 @@ public class itemCache
 	}
 	else{
 		System.out.println("Updating graph!");
-		MTGStockScraper graphScraper = new MTGStockScraper();
-		String path = graphScraper.getPriceHistory(name);
+		if(objectType == Type.Card){
+			MTGStockScraper graphScraper = new MTGStockScraper();
+			String path = graphScraper.getPriceHistory(name);
+		}
+		else if(objectType == Type.Currency){
+			CurrencyGraphScraper graphScraper = new CurrencyGraphScraper();
+			String prefix = name.substring(0, name.indexOf("_"));
+			graphScraper.getCurrencyGraph(prefix);
+		}
 		SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		query = "UPDATE itemCache SET graph_Update = \'" + ft.format(curr) + "\'";
 		query = query + " WHERE Name = \'" + name + "\';";

@@ -14,7 +14,8 @@ CLASSES = \
 	  Type.java \
 	  WIWConstants.java \
 	  WIWServer.java \
-	  ItemServer.java
+	  ItemServer.java \
+	  CurrencyGraphScraper.java
 
 default: classes
 classes: $(CLASSES:.java=.class)

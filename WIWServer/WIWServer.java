@@ -220,11 +220,28 @@ public class WIWServer
 					objectType = Type.Stamp;
 					System.err.println("STAMP...");
 				}
+				else if(objectData[0].equalsIgnoreCase("P"))
+				{
+					System.err.println("PERSON...");
+				}
 
 				String result = "";
 				System.err.println("\t-> Returning: (L/M/H)");
+				String data[] = new String[3];
 
-				for(String s : (DBRequest.getPrice(objectType, objectData[1])))
+				if(objectData[0].equalsIgnoreCase("P"))
+				{
+					Random rand = new Random(System.currentTimeMillis());
+					data[0] = "$" + rand.nextInt(100-5) + 5;
+					data[1] = "$" + rand.nextInt(1000-500) + 500;
+					data[2] = "$" + rand.nextInt(10000000-5000) + 5000;
+				}
+				else
+				{
+					 data = DBRequest.getPrice(objectType, objectData[1]);
+				}
+
+				for(String s : data)
 				{
 					System.err.println("\t\t" + s);
 					result += s + ";";
@@ -242,6 +259,31 @@ public class WIWServer
 						fis.read(image_data);
 						String dataString = Base64.encodeBase64String(image_data);
 						result += dataString;
+					}
+					catch(Exception e)
+					{
+						e.printStackTrace();
+					}
+				}
+				else if(objectType == Type.Currency)
+				{
+					try
+					{
+						File f = new File("price_graphs/" + objectData[1].substring(0, objectData[1].indexOf("_")) + ".png");
+						System.err.println("\t-> Converting " + f.toString() + " for sending..."); 
+						FileInputStream fis  = new FileInputStream(f);
+						byte[] image_data = new byte[(int) f.length()];
+						fis.read(image_data);
+						
+						if(image_data != null)
+						{
+							String dataString = Base64.encodeBase64String(image_data);
+							result += dataString;
+						}
+						else
+						{
+							System.err.println("\t-> Failed to fetch currency graph. Unsupported currency type?");
+						}
 					}
 					catch(Exception e)
 					{
