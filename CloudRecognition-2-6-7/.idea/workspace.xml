@@ -70,40 +70,8 @@
       <file leaf-file-name="CloudReco.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/qualcomm/QCARSamples/CloudRecognition/CloudReco.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="18" selection-start="2595" selection-end="2595" vertical-scroll-proportion="0.4697286" vertical-offset="795" max-vertical-offset="25380">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#15140#15169#0" expanded="true" />
-                <element signature="e#17938#17967#0" expanded="true" />
-                <element signature="e#36069#36127#0" expanded="true" />
-                <element signature="e#36200#36255#0" expanded="true" />
-                <element signature="e#36332#36391#0" expanded="true" />
-                <element signature="e#36468#36527#0" expanded="true" />
-                <element signature="e#36593#36641#0" expanded="true" />
-                <element signature="e#36719#36779#0" expanded="true" />
-                <element signature="e#36850#36903#0" expanded="true" />
-                <element signature="e#36976#37031#0" expanded="true" />
-                <element signature="e#37075#37120#0" expanded="true" />
-                <element signature="e#37327#37386#0" expanded="true" />
-                <element signature="e#37459#37515#0" expanded="true" />
-                <element signature="e#37592#37652#0" expanded="true" />
-                <element signature="e#37729#37789#0" expanded="true" />
-                <element signature="e#37855#37904#0" expanded="true" />
-                <element signature="e#37982#38043#0" expanded="true" />
-                <element signature="e#38114#38168#0" expanded="true" />
-                <element signature="e#38241#38297#0" expanded="true" />
-                <element signature="e#38341#38387#0" expanded="true" />
-                <element signature="e#39302#39331#0" expanded="true" />
-                <element signature="e#42984#43240#0" expanded="true" />
-                <element signature="e#43221#43222#0" expanded="true" />
-                <element signature="e#52812#52845#0" expanded="true" />
-                <element signature="e#52863#52905#0" expanded="true" />
-                <element signature="e#53051#53085#0" expanded="true" />
-                <element signature="e#53159#53192#0" expanded="true" />
-                <element signature="e#53285#53327#0" expanded="true" />
-                <element signature="e#53404#53445#0" expanded="true" />
-                <element signature="e#53670#53707#0" expanded="true" />
-              </folding>
+            <state line="84" column="18" selection-start="2846" selection-end="2846" vertical-scroll-proportion="0.021037867" vertical-offset="225" max-vertical-offset="25080">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -132,7 +100,6 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="16" />
     <option name="y" value="22" />
     <option name="width" value="1440" />
     <option name="height" value="874" />
@@ -164,6 +131,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -238,7 +206,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -254,11 +221,11 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -397,6 +364,23 @@
       <AnalysisUIOptions />
     </option>
   </component>
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="462dab48-2c35-4e17-a089-03c9e9cd541c" name="Default" comment="" />
@@ -406,8 +390,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="16" y="22" width="1440" height="874" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="22" width="1440" height="874" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -418,19 +402,19 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38196287" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15997131" sideWeight="0.67241377" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15997131" sideWeight="0.67241377" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3275862" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -499,39 +483,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/qualcomm/QCARSamples/CloudRecognition/CloudReco.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="64" column="24" selection-start="2019" selection-end="2019" vertical-scroll-proportion="0.0" vertical-offset="795" max-vertical-offset="25395">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#15140#15169#0" expanded="true" />
-            <element signature="e#17938#17967#0" expanded="true" />
-            <element signature="e#36069#36127#0" expanded="true" />
-            <element signature="e#36200#36255#0" expanded="true" />
-            <element signature="e#36332#36391#0" expanded="true" />
-            <element signature="e#36468#36527#0" expanded="true" />
-            <element signature="e#36593#36641#0" expanded="true" />
-            <element signature="e#36719#36779#0" expanded="true" />
-            <element signature="e#36850#36903#0" expanded="true" />
-            <element signature="e#36976#37031#0" expanded="true" />
-            <element signature="e#37075#37120#0" expanded="true" />
-            <element signature="e#37327#37386#0" expanded="true" />
-            <element signature="e#37459#37515#0" expanded="true" />
-            <element signature="e#37592#37652#0" expanded="true" />
-            <element signature="e#37729#37789#0" expanded="true" />
-            <element signature="e#37855#37904#0" expanded="true" />
-            <element signature="e#37982#38043#0" expanded="true" />
-            <element signature="e#38114#38168#0" expanded="true" />
-            <element signature="e#38241#38297#0" expanded="true" />
-            <element signature="e#38341#38387#0" expanded="true" />
-            <element signature="e#39302#39331#0" expanded="true" />
-            <element signature="e#42984#43240#0" expanded="true" />
-            <element signature="e#43221#43222#0" expanded="true" />
-            <element signature="e#52812#52845#0" expanded="true" />
-            <element signature="e#52863#52905#0" expanded="true" />
-            <element signature="e#53051#53085#0" expanded="true" />
-            <element signature="e#53159#53192#0" expanded="true" />
-            <element signature="e#53285#53327#0" expanded="true" />
-            <element signature="e#53404#53445#0" expanded="true" />
-            <element signature="e#53670#53707#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -545,39 +497,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/qualcomm/QCARSamples/CloudRecognition/CloudReco.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="64" column="24" selection-start="2019" selection-end="2019" vertical-scroll-proportion="0.0" vertical-offset="795" max-vertical-offset="25395">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#15140#15169#0" expanded="true" />
-            <element signature="e#17938#17967#0" expanded="true" />
-            <element signature="e#36069#36127#0" expanded="true" />
-            <element signature="e#36200#36255#0" expanded="true" />
-            <element signature="e#36332#36391#0" expanded="true" />
-            <element signature="e#36468#36527#0" expanded="true" />
-            <element signature="e#36593#36641#0" expanded="true" />
-            <element signature="e#36719#36779#0" expanded="true" />
-            <element signature="e#36850#36903#0" expanded="true" />
-            <element signature="e#36976#37031#0" expanded="true" />
-            <element signature="e#37075#37120#0" expanded="true" />
-            <element signature="e#37327#37386#0" expanded="true" />
-            <element signature="e#37459#37515#0" expanded="true" />
-            <element signature="e#37592#37652#0" expanded="true" />
-            <element signature="e#37729#37789#0" expanded="true" />
-            <element signature="e#37855#37904#0" expanded="true" />
-            <element signature="e#37982#38043#0" expanded="true" />
-            <element signature="e#38114#38168#0" expanded="true" />
-            <element signature="e#38241#38297#0" expanded="true" />
-            <element signature="e#38341#38387#0" expanded="true" />
-            <element signature="e#39302#39331#0" expanded="true" />
-            <element signature="e#42984#43240#0" expanded="true" />
-            <element signature="e#43221#43222#0" expanded="true" />
-            <element signature="e#52812#52845#0" expanded="true" />
-            <element signature="e#52863#52905#0" expanded="true" />
-            <element signature="e#53051#53085#0" expanded="true" />
-            <element signature="e#53159#53192#0" expanded="true" />
-            <element signature="e#53285#53327#0" expanded="true" />
-            <element signature="e#53404#53445#0" expanded="true" />
-            <element signature="e#53670#53707#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -591,39 +511,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/qualcomm/QCARSamples/CloudRecognition/CloudReco.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="64" column="24" selection-start="2019" selection-end="2019" vertical-scroll-proportion="0.0" vertical-offset="795" max-vertical-offset="25395">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#15140#15169#0" expanded="true" />
-            <element signature="e#17938#17967#0" expanded="true" />
-            <element signature="e#36069#36127#0" expanded="true" />
-            <element signature="e#36200#36255#0" expanded="true" />
-            <element signature="e#36332#36391#0" expanded="true" />
-            <element signature="e#36468#36527#0" expanded="true" />
-            <element signature="e#36593#36641#0" expanded="true" />
-            <element signature="e#36719#36779#0" expanded="true" />
-            <element signature="e#36850#36903#0" expanded="true" />
-            <element signature="e#36976#37031#0" expanded="true" />
-            <element signature="e#37075#37120#0" expanded="true" />
-            <element signature="e#37327#37386#0" expanded="true" />
-            <element signature="e#37459#37515#0" expanded="true" />
-            <element signature="e#37592#37652#0" expanded="true" />
-            <element signature="e#37729#37789#0" expanded="true" />
-            <element signature="e#37855#37904#0" expanded="true" />
-            <element signature="e#37982#38043#0" expanded="true" />
-            <element signature="e#38114#38168#0" expanded="true" />
-            <element signature="e#38241#38297#0" expanded="true" />
-            <element signature="e#38341#38387#0" expanded="true" />
-            <element signature="e#39302#39331#0" expanded="true" />
-            <element signature="e#42984#43240#0" expanded="true" />
-            <element signature="e#43221#43222#0" expanded="true" />
-            <element signature="e#52812#52845#0" expanded="true" />
-            <element signature="e#52863#52905#0" expanded="true" />
-            <element signature="e#53051#53085#0" expanded="true" />
-            <element signature="e#53159#53192#0" expanded="true" />
-            <element signature="e#53285#53327#0" expanded="true" />
-            <element signature="e#53404#53445#0" expanded="true" />
-            <element signature="e#53670#53707#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -637,39 +525,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/qualcomm/QCARSamples/CloudRecognition/CloudReco.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="64" column="24" selection-start="2019" selection-end="2019" vertical-scroll-proportion="0.0" vertical-offset="795" max-vertical-offset="25395">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#15140#15169#0" expanded="true" />
-            <element signature="e#17938#17967#0" expanded="true" />
-            <element signature="e#36069#36127#0" expanded="true" />
-            <element signature="e#36200#36255#0" expanded="true" />
-            <element signature="e#36332#36391#0" expanded="true" />
-            <element signature="e#36468#36527#0" expanded="true" />
-            <element signature="e#36593#36641#0" expanded="true" />
-            <element signature="e#36719#36779#0" expanded="true" />
-            <element signature="e#36850#36903#0" expanded="true" />
-            <element signature="e#36976#37031#0" expanded="true" />
-            <element signature="e#37075#37120#0" expanded="true" />
-            <element signature="e#37327#37386#0" expanded="true" />
-            <element signature="e#37459#37515#0" expanded="true" />
-            <element signature="e#37592#37652#0" expanded="true" />
-            <element signature="e#37729#37789#0" expanded="true" />
-            <element signature="e#37855#37904#0" expanded="true" />
-            <element signature="e#37982#38043#0" expanded="true" />
-            <element signature="e#38114#38168#0" expanded="true" />
-            <element signature="e#38241#38297#0" expanded="true" />
-            <element signature="e#38341#38387#0" expanded="true" />
-            <element signature="e#39302#39331#0" expanded="true" />
-            <element signature="e#42984#43240#0" expanded="true" />
-            <element signature="e#43221#43222#0" expanded="true" />
-            <element signature="e#52812#52845#0" expanded="true" />
-            <element signature="e#52863#52905#0" expanded="true" />
-            <element signature="e#53051#53085#0" expanded="true" />
-            <element signature="e#53159#53192#0" expanded="true" />
-            <element signature="e#53285#53327#0" expanded="true" />
-            <element signature="e#53404#53445#0" expanded="true" />
-            <element signature="e#53670#53707#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -683,39 +539,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/qualcomm/QCARSamples/CloudRecognition/CloudReco.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="60" column="24" selection-start="1860" selection-end="1860" vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="27660">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#15140#15169#0" expanded="true" />
-            <element signature="e#17938#17967#0" expanded="true" />
-            <element signature="e#36069#36127#0" expanded="true" />
-            <element signature="e#36200#36255#0" expanded="true" />
-            <element signature="e#36332#36391#0" expanded="true" />
-            <element signature="e#36468#36527#0" expanded="true" />
-            <element signature="e#36593#36641#0" expanded="true" />
-            <element signature="e#36719#36779#0" expanded="true" />
-            <element signature="e#36850#36903#0" expanded="true" />
-            <element signature="e#36976#37031#0" expanded="true" />
-            <element signature="e#37075#37120#0" expanded="true" />
-            <element signature="e#37327#37386#0" expanded="true" />
-            <element signature="e#37459#37515#0" expanded="true" />
-            <element signature="e#37592#37652#0" expanded="true" />
-            <element signature="e#37729#37789#0" expanded="true" />
-            <element signature="e#37855#37904#0" expanded="true" />
-            <element signature="e#37982#38043#0" expanded="true" />
-            <element signature="e#38114#38168#0" expanded="true" />
-            <element signature="e#38241#38297#0" expanded="true" />
-            <element signature="e#38341#38387#0" expanded="true" />
-            <element signature="e#39302#39331#0" expanded="true" />
-            <element signature="e#42984#43240#0" expanded="true" />
-            <element signature="e#43221#43222#0" expanded="true" />
-            <element signature="e#52812#52845#0" expanded="true" />
-            <element signature="e#52863#52905#0" expanded="true" />
-            <element signature="e#53051#53085#0" expanded="true" />
-            <element signature="e#53159#53192#0" expanded="true" />
-            <element signature="e#53285#53327#0" expanded="true" />
-            <element signature="e#53404#53445#0" expanded="true" />
-            <element signature="e#53670#53707#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -729,39 +553,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/qualcomm/QCARSamples/CloudRecognition/CloudReco.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="60" column="24" selection-start="1860" selection-end="1860" vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="27255">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#15140#15169#0" expanded="true" />
-            <element signature="e#17938#17967#0" expanded="true" />
-            <element signature="e#36069#36127#0" expanded="true" />
-            <element signature="e#36200#36255#0" expanded="true" />
-            <element signature="e#36332#36391#0" expanded="true" />
-            <element signature="e#36468#36527#0" expanded="true" />
-            <element signature="e#36593#36641#0" expanded="true" />
-            <element signature="e#36719#36779#0" expanded="true" />
-            <element signature="e#36850#36903#0" expanded="true" />
-            <element signature="e#36976#37031#0" expanded="true" />
-            <element signature="e#37075#37120#0" expanded="true" />
-            <element signature="e#37327#37386#0" expanded="true" />
-            <element signature="e#37459#37515#0" expanded="true" />
-            <element signature="e#37592#37652#0" expanded="true" />
-            <element signature="e#37729#37789#0" expanded="true" />
-            <element signature="e#37855#37904#0" expanded="true" />
-            <element signature="e#37982#38043#0" expanded="true" />
-            <element signature="e#38114#38168#0" expanded="true" />
-            <element signature="e#38241#38297#0" expanded="true" />
-            <element signature="e#38341#38387#0" expanded="true" />
-            <element signature="e#39302#39331#0" expanded="true" />
-            <element signature="e#42984#43240#0" expanded="true" />
-            <element signature="e#43221#43222#0" expanded="true" />
-            <element signature="e#52812#52845#0" expanded="true" />
-            <element signature="e#52863#52905#0" expanded="true" />
-            <element signature="e#53051#53085#0" expanded="true" />
-            <element signature="e#53159#53192#0" expanded="true" />
-            <element signature="e#53285#53327#0" expanded="true" />
-            <element signature="e#53404#53445#0" expanded="true" />
-            <element signature="e#53670#53707#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -775,39 +567,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/qualcomm/QCARSamples/CloudRecognition/CloudReco.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="939" column="16" selection-start="31038" selection-end="31038" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="27810">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#15140#15169#0" expanded="true" />
-            <element signature="e#17938#17967#0" expanded="true" />
-            <element signature="e#36069#36127#0" expanded="true" />
-            <element signature="e#36200#36255#0" expanded="true" />
-            <element signature="e#36332#36391#0" expanded="true" />
-            <element signature="e#36468#36527#0" expanded="true" />
-            <element signature="e#36593#36641#0" expanded="true" />
-            <element signature="e#36719#36779#0" expanded="true" />
-            <element signature="e#36850#36903#0" expanded="true" />
-            <element signature="e#36976#37031#0" expanded="true" />
-            <element signature="e#37075#37120#0" expanded="true" />
-            <element signature="e#37327#37386#0" expanded="true" />
-            <element signature="e#37459#37515#0" expanded="true" />
-            <element signature="e#37592#37652#0" expanded="true" />
-            <element signature="e#37729#37789#0" expanded="true" />
-            <element signature="e#37855#37904#0" expanded="true" />
-            <element signature="e#37982#38043#0" expanded="true" />
-            <element signature="e#38114#38168#0" expanded="true" />
-            <element signature="e#38241#38297#0" expanded="true" />
-            <element signature="e#38341#38387#0" expanded="true" />
-            <element signature="e#39302#39331#0" expanded="true" />
-            <element signature="e#42984#43240#0" expanded="true" />
-            <element signature="e#43221#43222#0" expanded="true" />
-            <element signature="e#52812#52845#0" expanded="true" />
-            <element signature="e#52863#52905#0" expanded="true" />
-            <element signature="e#53051#53085#0" expanded="true" />
-            <element signature="e#53159#53192#0" expanded="true" />
-            <element signature="e#53285#53327#0" expanded="true" />
-            <element signature="e#53404#53445#0" expanded="true" />
-            <element signature="e#53670#53707#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -827,40 +587,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/qualcomm/QCARSamples/CloudRecognition/CloudReco.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="18" selection-start="2595" selection-end="2595" vertical-scroll-proportion="0.4697286" vertical-offset="795" max-vertical-offset="25380">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#15140#15169#0" expanded="true" />
-            <element signature="e#17938#17967#0" expanded="true" />
-            <element signature="e#36069#36127#0" expanded="true" />
-            <element signature="e#36200#36255#0" expanded="true" />
-            <element signature="e#36332#36391#0" expanded="true" />
-            <element signature="e#36468#36527#0" expanded="true" />
-            <element signature="e#36593#36641#0" expanded="true" />
-            <element signature="e#36719#36779#0" expanded="true" />
-            <element signature="e#36850#36903#0" expanded="true" />
-            <element signature="e#36976#37031#0" expanded="true" />
-            <element signature="e#37075#37120#0" expanded="true" />
-            <element signature="e#37327#37386#0" expanded="true" />
-            <element signature="e#37459#37515#0" expanded="true" />
-            <element signature="e#37592#37652#0" expanded="true" />
-            <element signature="e#37729#37789#0" expanded="true" />
-            <element signature="e#37855#37904#0" expanded="true" />
-            <element signature="e#37982#38043#0" expanded="true" />
-            <element signature="e#38114#38168#0" expanded="true" />
-            <element signature="e#38241#38297#0" expanded="true" />
-            <element signature="e#38341#38387#0" expanded="true" />
-            <element signature="e#39302#39331#0" expanded="true" />
-            <element signature="e#42984#43240#0" expanded="true" />
-            <element signature="e#43221#43222#0" expanded="true" />
-            <element signature="e#52812#52845#0" expanded="true" />
-            <element signature="e#52863#52905#0" expanded="true" />
-            <element signature="e#53051#53085#0" expanded="true" />
-            <element signature="e#53159#53192#0" expanded="true" />
-            <element signature="e#53285#53327#0" expanded="true" />
-            <element signature="e#53404#53445#0" expanded="true" />
-            <element signature="e#53670#53707#0" expanded="true" />
-          </folding>
+        <state line="84" column="18" selection-start="2846" selection-end="2846" vertical-scroll-proportion="0.021037867" vertical-offset="225" max-vertical-offset="25530">
+          <folding />
         </state>
       </provider>
     </entry>
